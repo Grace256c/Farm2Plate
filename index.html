@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm 2 Plate Connect – Integrated Food Security Platform</title>
+  <meta name="description" content="Connecting farms to families. Ending hunger with technology across Uganda." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ===== LOADING SPLASH ===== -->
+<div id="splash">
+  <div class="splash-inner">
+    <!-- LOGO PLACEHOLDER -->
+    <div class="splash-logo">
+      <div class="logo-placeholder-large">
+        <span>🌾</span>
+        <p>Farm 2 Plate</p>
+      </div>
+    </div>
+    <div class="splash-bar"><div class="splash-fill"></div></div>
+  </div>
+</div>
+
+<!-- ===== COOKIE BANNER ===== -->
+<div id="cookie-banner">
+  <p data-i18n="cookie_text">We use cookies to improve your experience on this platform.</p>
+  <div class="cookie-btns">
+    <button id="cookie-accept" data-i18n="cookie_accept">Accept</button>
+    <button id="cookie-decline" data-i18n="cookie_decline">Decline</button>
+  </div>
+</div>
+
+<!-- ===== STICKY NAV ===== -->
+<nav id="navbar">
+  <div class="nav-container">
+    <!-- LOGO PLACEHOLDER -->
+    <a href="#" class="nav-logo">
+      <div class="logo-placeholder-nav">
+        <!-- Replace with: <img src="logo.png" alt="Farm2Plate Logo" /> -->
+        <span>🌾</span> Farm2Plate
+      </div>
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#problem" data-i18n="nav_problem">Problem</a></li>
+      <li><a href="#solution" data-i18n="nav_solution">Solution</a></li>
+      <li><a href="#how" data-i18n="nav_how">How It Works</a></li>
+      <li><a href="#impact" data-i18n="nav_impact">Impact</a></li>
+      <li><a href="#partners" data-i18n="nav_partners">Partners</a></li>
+      <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+      <li><a href="#team" data-i18n="nav_team">Team</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="lg">LG</button>
+        <button class="lang-btn" data-lang="sw">SW</button>
+      </div>
+      <!-- Dark Mode -->
+      <button id="dark-toggle" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg-shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge" data-i18n="hero_badge">🇺🇬 Made for Uganda & Africa</span>
+    <h1 data-i18n="hero_headline">Connecting Farms to Families.<br/>Ending Hunger with Technology.</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Farm 2 Plate Connect is a mobile + SMS-powered ecosystem linking farmers, households, schools, NGOs, and transporters to eliminate food waste and fight malnutrition.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openModal()" data-i18n="hero_cta1">Get Started</button>
+      <button class="btn-outline" onclick="openModal('farmer')" data-i18n="hero_cta2">Join as a Farmer</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hnum" data-target="36">0</span><span>%</span><small data-i18n="hstat1">Undernourished</small></div>
+      <div class="hstat"><span class="hnum" data-target="26">0</span><span>%</span><small data-i18n="hstat2">Child Stunting</small></div>
+      <div class="hstat"><span class="hnum" data-target="797">0</span><span>K</span><small data-i18n="hstat3">In Food Crisis</small></div>
+    </div>
+  </div>
+  <div class="hero-illustration">
+    <div class="farm-ecosystem">
+      <div class="eco-node farm"><span>🌾</span><small data-i18n="eco_farm">Farm</small></div>
+      <div class="eco-arrow">→</div>
+      <div class="eco-node platform"><span>📱</span><small data-i18n="eco_platform">Platform</small></div>
+      <div class="eco-arrow">→</div>
+      <div class="eco-node family"><span>🏠</span><small data-i18n="eco_family">Family</small></div>
+    </div>
+    <div class="video-card">
+      <div class="video-thumb">
+        <div class="play-btn" onclick="document.getElementById('video-modal').classList.add('open')">
+          <i class="fas fa-play"></i>
+        </div>
+        <div class="video-label" data-i18n="video_label">Watch Our Story (60s)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section id="problem">
+  <div class="container">
+    <div class="section-tag" data-i18n="problem_tag">🚨 The Crisis</div>
+    <h2 data-i18n="problem_title">Uganda's Food Security Emergency</h2>
+    <p class="section-sub" data-i18n="problem_sub">Millions face hunger not because food doesn't exist — but because systems fail to connect supply with need.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">😔</div>
+        <div class="problem-stat counter" data-target="36">0</div><span class="pct">%</span>
+        <h3 data-i18n="prob1_title">Undernourished Population</h3>
+        <p data-i18n="prob1_desc">Over a third of Ugandans do not have consistent access to adequate nutritious food.</p>
+      </div>
+      <div class="problem-card highlight">
+        <div class="problem-icon">👶</div>
+        <div class="problem-stat counter" data-target="26">0</div><span class="pct">%</span>
+        <h3 data-i18n="prob2_title">Child Stunting</h3>
+        <p data-i18n="prob2_desc">1 in 4 children under 5 suffer from stunted growth due to chronic malnutrition.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🆘</div>
+        <div class="problem-stat counter" data-target="797">0</div><span class="pct">K</span>
+        <h3 data-i18n="prob3_title">People in Food Crisis</h3>
+        <p data-i18n="prob3_desc">797,000 Ugandans are in acute food crisis, requiring urgent humanitarian assistance.</p>
+      </div>
+    </div>
+    <div class="problem-causes">
+      <div class="cause"><i class="fas fa-route"></i><p data-i18n="cause1">Poor distribution networks</p></div>
+      <div class="cause"><i class="fas fa-trash"></i><p data-i18n="cause2">40% food wasted post-harvest</p></div>
+      <div class="cause"><i class="fas fa-hand-holding-usd"></i><p data-i18n="cause3">Farmers earn too little</p></div>
+      <div class="cause"><i class="fas fa-wifi"></i><p data-i18n="cause4">Limited market information</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section id="solution">
+  <div class="container">
+    <div class="section-tag" data-i18n="solution_tag">💡 Our Answer</div>
+    <h2 data-i18n="solution_title">Farm 2 Plate Connect Platform</h2>
+    <p class="section-sub" data-i18n="solution_sub">A mobile + SMS-based ecosystem connecting food production, distribution, and nutrition — accessible even on a basic feature phone.</p>
+    <div class="solution-visual">
+      <div class="sol-col left">
+        <div class="sol-item"><i class="fas fa-sms"></i><div><h4 data-i18n="sol1_h">SMS-First Design</h4><p data-i18n="sol1_p">Works on any phone — no internet required</p></div></div>
+        <div class="sol-item"><i class="fas fa-network-wired"></i><div><h4 data-i18n="sol2_h">End-to-End Ecosystem</h4><p data-i18n="sol2_p">Farmers → Platform → Buyers → Households</p></div></div>
+        <div class="sol-item"><i class="fas fa-shield-alt"></i><div><h4 data-i18n="sol3_h">Transparent & Trusted</h4><p data-i18n="sol3_p">Verified donations, fair pricing, open impact data</p></div></div>
+      </div>
+      <div class="sol-center">
+        <div class="platform-badge">
+          <span>🌾</span>
+          <strong>Farm2Plate</strong>
+          <small data-i18n="platform_tagline">Tech for Zero Hunger</small>
+        </div>
+      </div>
+      <div class="sol-col right">
+        <div class="sol-item"><i class="fas fa-mobile-alt"></i><div><h4 data-i18n="sol4_h">Mobile Money Ready</h4><p data-i18n="sol4_p">MTN MoMo & Airtel Money integrated</p></div></div>
+        <div class="sol-item"><i class="fas fa-robot"></i><div><h4 data-i18n="sol5_h">AI-Powered Insights</h4><p data-i18n="sol5_p">Smart advisories, nutrition tips, route optimization</p></div></div>
+        <div class="sol-item"><i class="fas fa-language"></i><div><h4 data-i18n="sol6_h">Local Languages</h4><p data-i18n="sol6_p">English, Luganda, Swahili support</p></div></div>
+      </div>
+    </div>
+
+    <!-- Python Backend Note -->
+    <div class="tech-stack-note">
+      <i class="fab fa-python"></i>
+      <span data-i18n="tech_note">Powered by a Python (Flask/FastAPI) backend with SMS gateway, AI/ML modules, and mobile money APIs</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how">
+  <div class="container">
+    <div class="section-tag" data-i18n="how_tag">⚙️ The System</div>
+    <h2 data-i18n="how_title">How It Works</h2>
+    <p class="section-sub" data-i18n="how_sub">Six integrated modules working together to solve food insecurity from farm to plate.</p>
+    <div class="steps-flow">
+
+      <div class="step-card" data-step="1">
+        <div class="step-icon">🌾</div>
+        <div class="step-num">01</div>
+        <h3 data-i18n="step1_title">Smart Farming Advisory</h3>
+        <p data-i18n="step1_desc">Farmers receive SMS + voice messages with weather forecasts, planting schedules, pest control advice, and market prices — boosting productivity.</p>
+        <div class="step-tags"><span>SMS</span><span>Voice AI</span><span>Weather API</span></div>
+      </div>
+
+      <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="step-card" data-step="2">
+        <div class="step-icon">🛒</div>
+        <div class="step-num">02</div>
+        <h3 data-i18n="step2_title">Digital Market & Donations</h3>
+        <p data-i18n="step2_desc">Farmers list produce directly. Surplus food is automatically matched to vulnerable households, schools, and NGOs — reducing waste and hunger simultaneously.</p>
+        <div class="step-tags"><span>Marketplace</span><span>AI Matching</span><span>Donations</span></div>
+      </div>
+
+      <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="step-card" data-step="3">
+        <div class="step-icon">🚛</div>
+        <div class="step-num">03</div>
+        <h3 data-i18n="step3_title">Transport & Logistics</h3>
+        <p data-i18n="step3_desc">Connects farmers with boda bodas, trucks, and logistics partners. AI optimizes delivery routes for lowest cost and fastest time.</p>
+        <div class="step-tags"><span>Route AI</span><span>Boda Boda</span><span>Tracking</span></div>
+      </div>
+
+      <div class="step-connector mobile-hide"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="step-card" data-step="4">
+        <div class="step-icon">🏫</div>
+        <div class="step-num">04</div>
+        <h3 data-i18n="step4_title">School Feeding Link</h3>
+        <p data-i18n="step4_desc">Schools place orders directly from local farmers, ensuring children receive fresh, nutritious meals while farmers gain reliable buyers.</p>
+        <div class="step-tags"><span>School Orders</span><span>Nutrition</span><span>Local Sourcing</span></div>
+      </div>
+
+      <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="step-card" data-step="5">
+        <div class="step-icon">💳</div>
+        <div class="step-num">05</div>
+        <h3 data-i18n="step5_title">Mobile Money & Finance</h3>
+        <p data-i18n="step5_desc">Seamless payments via MTN MoMo & Airtel Money. Microfinance tools offer savings accounts and small loans to farmers and households.</p>
+        <div class="step-tags"><span>MTN MoMo</span><span>Airtel</span><span>Microloans</span></div>
+      </div>
+
+      <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+
+      <div class="step-card" data-step="6">
+        <div class="step-icon">🥗</div>
+        <div class="step-num">06</div>
+        <h3 data-i18n="step6_title">Nutrition & Health AI</h3>
+        <p data-i18n="step6_desc">Weekly SMS/AI nutrition tips tailored to household needs. Focus on child health, pregnancy, and balanced diets using locally available foods.</p>
+        <div class="step-tags"><span>AI Tips</span><span>Child Health</span><span>SMS</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO IT SERVES ===== -->
+<section id="serves">
+  <div class="container">
+    <div class="section-tag" data-i18n="serves_tag">👥 Community</div>
+    <h2 data-i18n="serves_title">Who It Serves</h2>
+    <div class="serves-grid">
+      <div class="serve-card"><div class="serve-emoji">👨‍🌾</div><h3 data-i18n="serve1_h">Farmers</h3><p data-i18n="serve1_p">Better prices, reliable buyers, farming advice, and mobile payments.</p></div>
+      <div class="serve-card"><div class="serve-emoji">🏠</div><h3 data-i18n="serve2_h">Households</h3><p data-i18n="serve2_p">Access to affordable, nutritious food with donation safety nets.</p></div>
+      <div class="serve-card"><div class="serve-emoji">🏫</div><h3 data-i18n="serve3_h">Schools</h3><p data-i18n="serve3_p">Fresh food directly from farms for school feeding programmes.</p></div>
+      <div class="serve-card"><div class="serve-emoji">🤝</div><h3 data-i18n="serve4_h">NGOs & Donors</h3><p data-i18n="serve4_p">Transparent donation tracking with real-time impact reporting.</p></div>
+      <div class="serve-card"><div class="serve-emoji">🚛</div><h3 data-i18n="serve5_h">Transporters</h3><p data-i18n="serve5_p">Optimized routes, more jobs, and mobile payment integration.</p></div>
+      <div class="serve-card"><div class="serve-emoji">👶</div><h3 data-i18n="serve6_h">Children</h3><p data-i18n="serve6_p">Better nutrition, less stunting, brighter futures through school meals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IMPACT ===== -->
+<section id="impact">
+  <div class="container">
+    <div class="section-tag" data-i18n="impact_tag">📊 Impact</div>
+    <h2 data-i18n="impact_title">Measuring What Matters</h2>
+    <p class="section-sub" data-i18n="impact_sub">Live simulated dashboard — updated as the platform scales across Uganda.</p>
+    <div class="impact-dashboard">
+      <div class="impact-metrics">
+        <div class="metric-card"><div class="metric-icon">🌱</div><div class="metric-val counter" data-target="40">0</div><span class="metric-unit">%</span><p data-i18n="metric1">Less Food Wasted</p></div>
+        <div class="metric-card"><div class="metric-icon">💰</div><div class="metric-val counter" data-target="65">0</div><span class="metric-unit">%</span><p data-i18n="metric2">Farmer Income Increase</p></div>
+        <div class="metric-card"><div class="metric-icon">🥦</div><div class="metric-val counter" data-target="12000">0</div><span class="metric-unit">+</span><p data-i18n="metric3">Households Fed</p></div>
+        <div class="metric-card"><div class="metric-icon">🏫</div><div class="metric-val counter" data-target="320">0</div><span class="metric-unit">+</span><p data-i18n="metric4">Schools Connected</p></div>
+        <div class="metric-card"><div class="metric-icon">👨‍🌾</div><div class="metric-val counter" data-target="5800">0</div><span class="metric-unit">+</span><p data-i18n="metric5">Farmers Registered</p></div>
+        <div class="metric-card"><div class="metric-icon">👶</div><div class="metric-val counter" data-target="30">0</div><span class="metric-unit">%</span><p data-i18n="metric6">Child Stunting Reduction</p></div>
+      </div>
+      <div class="impact-charts">
+        <canvas id="foodWasteChart"></canvas>
+        <canvas id="incomeChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Interactive Uganda Map Placeholder -->
+    <div class="map-section">
+      <h3 data-i18n="map_title">📍 Coverage Across Uganda</h3>
+      <div class="uganda-map-placeholder">
+        <div class="map-dot" style="top:35%;left:50%" title="Kampala"><span>🏙️</span><label>Kampala</label></div>
+        <div class="map-dot" style="top:25%;left:55%" title="Jinja"><span>🌊</span><label>Jinja</label></div>
+        <div class="map-dot" style="top:20%;left:45%" title="Gulu"><span>🌾</span><label>Gulu</label></div>
+        <div class="map-dot" style="top:45%;left:40%" title="Mbarara"><span>🐄</span><label>Mbarara</label></div>
+        <div class="map-dot" style="top:30%;left:60%" title="Mbale"><span>⛰️</span><label>Mbale</label></div>
+        <p class="map-note" data-i18n="map_note">Interactive map — hover to explore coverage zones</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY IT WORKS ===== -->
+<section id="why">
+  <div class="container">
+    <div class="section-tag" data-i18n="why_tag">🧠 Our Approach</div>
+    <h2 data-i18n="why_title">Why It Works</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon"><i class="fas fa-seedling"></i></div><h3 data-i18n="why1_h">Root Causes, Not Symptoms</h3><p data-i18n="why1_p">We fix broken distribution, not just deliver aid. Sustainable systems outlast one-time interventions.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-sms"></i></div><h3 data-i18n="why2_h">Inclusive SMS Technology</h3><p data-i18n="why2_p">No smartphone needed. Our SMS-first design reaches the last mile — even in areas with no data coverage.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-chart-bar"></i></div><h3 data-i18n="why3_h">Evidence-Based Design</h3><p data-i18n="why3_p">Every feature is grounded in Uganda-specific research, community input, and nutritional science.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-recycle"></i></div><h3 data-i18n="why4_h">Self-Sustaining Ecosystem</h3><p data-i18n="why4_p">Market fees, microfinance margins, and partnerships fund ongoing operations without perpetual donor dependence.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-eye"></i></div><h3 data-i18n="why5_h">Radical Transparency</h3><p data-i18n="why5_p">Every donation tracked on-chain. Farmers see prices. Donors see impact. Nothing hidden.</p></div>
+      <div class="why-card"><div class="why-icon"><i class="fas fa-globe-africa"></i></div><h3 data-i18n="why6_h">African-Centered Design</h3><p data-i18n="why6_p">Built with local communities, in local languages, respecting local food cultures and trade patterns.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SDG ALIGNMENT ===== -->
+<section id="sdg">
+  <div class="container">
+    <div class="section-tag" data-i18n="sdg_tag">🌍 Global Goals</div>
+    <h2 data-i18n="sdg_title">Aligned with the SDGs</h2>
+    <div class="sdg-strip">
+      <div class="sdg-badge sdg2"><div class="sdg-num">SDG 2</div><div class="sdg-icon">🌾</div><p data-i18n="sdg2">Zero Hunger</p></div>
+      <div class="sdg-badge sdg3"><div class="sdg-num">SDG 3</div><div class="sdg-icon">💚</div><p data-i18n="sdg3">Good Health & Well-being</p></div>
+      <div class="sdg-badge sdg8"><div class="sdg-num">SDG 8</div><div class="sdg-icon">💼</div><p data-i18n="sdg8">Decent Work & Economic Growth</p></div>
+      <div class="sdg-badge sdg12"><div class="sdg-num">SDG 12</div><div class="sdg-icon">♻️</div><p data-i18n="sdg12">Responsible Consumption</p></div>
+      <div class="sdg-badge sdg17"><div class="sdg-num">SDG 17</div><div class="sdg-icon">🤝</div><p data-i18n="sdg17">Partnerships for Goals</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section id="partners">
+  <div class="container">
+    <div class="section-tag" data-i18n="partners_tag">🤝 Partners & Sponsors</div>
+    <h2 data-i18n="partners_title">Backed By Global Leaders</h2>
+    <div class="partners-strip">
+      <div class="partner-logo"><span>🌾</span> FAO</div>
+      <div class="partner-logo"><span>🦄</span> UNICEF</div>
+      <div class="partner-logo"><span>🍽️</span> WFP</div>
+      <div class="partner-logo"><span>🏛️</span> Govt of Uganda</div>
+      <div class="partner-logo"><span>📡</span> MTN Uganda</div>
+      <div class="partner-logo"><span>📶</span> Airtel Uganda</div>
+    </div>
+    <p class="ssl-note"><i class="fas fa-lock"></i> <span data-i18n="ssl_note">SSL Secured · Verified NGO · Transparent Impact Reporting</span></p>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team">
+  <div class="container">
+    <div class="section-tag" data-i18n="team_tag">👩‍💻 Founders</div>
+    <h2 data-i18n="team_title">Meet the Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <!-- Replace with: <img src="team/photo1.jpg" alt="Founder" /> -->
+        <div class="team-photo-placeholder"><span>👩‍🌾</span></div>
+        <h3 data-i18n="team1_name">Amara Nakato</h3>
+        <p class="team-role" data-i18n="team1_role">CEO & Co-Founder</p>
+        <p class="team-bio" data-i18n="team1_bio">Former USAID food systems specialist with 10 years in East African agriculture and rural development.</p>
+        <div class="team-socials"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo-placeholder"><span>👨‍💻</span></div>
+        <h3 data-i18n="team2_name">David Ssemwogerere</h3>
+        <p class="team-role" data-i18n="team2_role">CTO & Co-Founder</p>
+        <p class="team-bio" data-i18n="team2_bio">Full-stack Python & AI engineer. Built SMS platforms reaching 500,000+ users across Uganda and Kenya.</p>
+        <div class="team-socials"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-github"></i></a></div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo-placeholder"><span>👩‍⚕️</span></div>
+        <h3 data-i18n="team3_name">Grace Achieng</h3>
+        <p class="team-role" data-i18n="team3_role">Head of Nutrition</p>
+        <p class="team-bio" data-i18n="team3_bio">Public health nutritionist, WHO consultant. Expert in child nutrition programming in Sub-Saharan Africa.</p>
+        <div class="team-socials"><a href="#"><i class="fab fa-linkedin"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section id="blog">
+  <div class="container">
+    <div class="section-tag" data-i18n="blog_tag">📰 Updates</div>
+    <h2 data-i18n="blog_title">Latest News & Insights</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <!-- <img src="blog/img1.jpg" alt="Blog" loading="lazy"> -->
+        <div class="blog-img-placeholder"><span>🌾</span></div>
+        <div class="blog-body">
+          <span class="blog-cat" data-i18n="blog1_cat">Impact</span>
+          <h3 data-i18n="blog1_title">How SMS Farming Advice Doubled Yields in Luwero District</h3>
+          <p data-i18n="blog1_date">March 28, 2025</p>
+          <a href="#" class="blog-link" data-i18n="blog_read">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img-placeholder"><span>🚛</span></div>
+        <div class="blog-body">
+          <span class="blog-cat" data-i18n="blog2_cat">Technology</span>
+          <h3 data-i18n="blog2_title">AI Route Optimization Cuts Delivery Costs by 35% for Farmers</h3>
+          <p data-i18n="blog2_date">March 14, 2025</p>
+          <a href="#" class="blog-link" data-i18n="blog_read">Read More →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img-placeholder"><span>🏫</span></div>
+        <div class="blog-body">
+          <span class="blog-cat" data-i18n="blog3_cat">Partnership</span>
+          <h3 data-i18n="blog3_title">200 Schools Now Sourcing Meals Directly from Local Farmers</h3>
+          <p data-i18n="blog3_date">February 20, 2025</p>
+          <a href="#" class="blog-link" data-i18n="blog_read">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box">
+      <h2 data-i18n="cta_title">Join the Movement to End Hunger</h2>
+      <p data-i18n="cta_sub">Every registration, donation, and partnership brings us closer to zero hunger in Uganda.</p>
+      <div class="cta-buttons">
+        <button class="btn-primary" onclick="openModal('farmer')" data-i18n="cta1">Register as Farmer</button>
+        <button class="btn-secondary" onclick="openModal('food')" data-i18n="cta2">Request Food</button>
+        <button class="btn-outline-light" onclick="openModal('partner')" data-i18n="cta3">Partner / Donate</button>
+      </div>
+      <div class="download-row">
+        <a href="#" class="download-btn"><i class="fas fa-file-pdf"></i> <span data-i18n="download_pitch">Download Pitch Deck</span></a>
+        <a href="#" class="download-btn"><i class="fas fa-file-alt"></i> <span data-i18n="download_onepager">Download One-Pager</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-tag" data-i18n="contact_tag">📬 Get In Touch</div>
+    <h2 data-i18n="contact_title">Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="cinfo"><i class="fas fa-map-marker-alt"></i><p>Plot 42, Kampala Road, Kampala, Uganda</p></div>
+        <div class="cinfo"><i class="fas fa-phone"></i><p>+256 700 123 456</p></div>
+        <div class="cinfo"><i class="fas fa-envelope"></i><p>hello@farm2plate.ug</p></div>
+        <div class="cinfo"><i class="fas fa-globe"></i><p>www.farm2plate.ug</p></div>
+        <div class="social-row">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form" onsubmit="submitContact(event)">
+        <input type="text" placeholder="Your Name" data-i18n-ph="form_name" required />
+        <input type="email" placeholder="Email Address" data-i18n-ph="form_email" required />
+        <select>
+          <option data-i18n="form_role_select">I am a...</option>
+          <option data-i18n="form_farmer">Farmer</option>
+          <option data-i18n="form_ngo">NGO / Donor</option>
+          <option data-i18n="form_school">School</option>
+          <option data-i18n="form_transporter">Transporter</option>
+          <option data-i18n="form_other">Other</option>
+        </select>
+        <textarea placeholder="Your message..." data-i18n-ph="form_message" rows="4" required></textarea>
+        <button type="submit" class="btn-primary" data-i18n="form_submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <!-- LOGO PLACEHOLDER -->
+      <div class="logo-placeholder-footer">
+        <!-- Replace with: <img src="logo-white.png" alt="Farm2Plate" /> -->
+        <span>🌾</span> Farm2Plate
+      </div>
+      <p data-i18n="footer_mission">Connecting farms to families. Ending hunger with technology in Uganda and beyond.</p>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer_platform">Platform</h4>
+      <a href="#how" data-i18n="footer_how">How It Works</a>
+      <a href="#impact" data-i18n="footer_impact">Impact Dashboard</a>
+      <a href="#" data-i18n="footer_register">Register</a>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer_org">Organisation</h4>
+      <a href="#team" data-i18n="footer_team">Our Team</a>
+      <a href="#partners" data-i18n="footer_partners">Partners</a>
+      <a href="#blog" data-i18n="footer_blog">Blog</a>
+    </div>
+    <div class="footer-links">
+      <h4 data-i18n="footer_legal">Legal</h4>
+      <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+      <a href="#" data-i18n="footer_terms">Terms of Service</a>
+      <a href="#" data-i18n="footer_data">Data Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Farm 2 Plate Connect. <span data-i18n="footer_rights">All rights reserved.</span></p>
+    <p class="footer-ssl"><i class="fas fa-lock"></i> <span data-i18n="footer_ssl">SSL Secured · Verified Organisation</span></p>
+  </div>
+</footer>
+
+<!-- ===== MODALS ===== -->
+
+<!-- Register Interest Modal -->
+<div id="register-modal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <h2 data-i18n="modal_title">Register Your Interest</h2>
+    <p data-i18n="modal_sub">Join thousands already using Farm 2 Plate Connect.</p>
+    <form onsubmit="submitRegister(event)">
+      <input type="text" placeholder="Full Name" required />
+      <input type="tel" placeholder="Phone Number (MTN/Airtel)" required />
+      <input type="email" placeholder="Email (optional)" />
+      <select id="modal-role">
+        <option value="farmer" data-i18n="form_farmer">Farmer</option>
+        <option value="household" data-i18n="form_household">Household</option>
+        <option value="school" data-i18n="form_school">School</option>
+        <option value="ngo" data-i18n="form_ngo">NGO / Donor</option>
+        <option value="transporter" data-i18n="form_transporter">Transporter</option>
+      </select>
+      <select>
+        <option data-i18n="form_district">Select District</option>
+        <option>Kampala</option><option>Wakiso</option><option>Gulu</option>
+        <option>Mbale</option><option>Mbarara</option><option>Jinja</option>
+        <option>Fort Portal</option><option>Arua</option>
+      </select>
+      <button type="submit" class="btn-primary" data-i18n="modal_submit">Register Now — It's Free</button>
+    </form>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div id="video-modal" class="modal-overlay">
+  <div class="modal-box video-modal-box">
+    <button class="modal-close" onclick="document.getElementById('video-modal').classList.remove('open')"><i class="fas fa-times"></i></button>
+    <h3 data-i18n="video_title">Farm 2 Plate Connect — Our Story</h3>
+    <!-- Replace src with actual video embed URL -->
+    <div class="video-embed-placeholder">
+      <div class="vep-inner">
+        <span>🎬</span>
+        <p data-i18n="video_placeholder">Video embed placeholder — replace with YouTube/Vimeo URL</p>
+        <small>e.g. &lt;iframe src="https://www.youtube.com/embed/YOUR_ID"&gt;&lt;/iframe&gt;</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI VIRTUAL ASSISTANT ===== -->
+<div id="ai-assistant">
+  <button id="ai-toggle" title="Open AI Assistant">
+    <i class="fas fa-robot"></i>
+    <span class="ai-badge">AI</span>
+  </button>
+  <div id="ai-panel">
+    <div class="ai-header">
+      <div class="ai-avatar">🤖</div>
+      <div>
+        <strong data-i18n="ai_name">FarmBot Assistant</strong>
+        <small data-i18n="ai_status">Powered by AI · Online</small>
+      </div>
+      <button class="ai-close" onclick="toggleAI()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ai-messages" id="ai-messages">
+      <div class="ai-msg bot">
+        <span data-i18n="ai_welcome">👋 Hello! I'm FarmBot. Ask me anything about Farm 2 Plate Connect — in English, Luganda, or Swahili!</span>
+      </div>
+    </div>
+    <div class="ai-suggestions">
+      <button onclick="askAI('How do I register as a farmer?')" data-i18n="ai_q1">Register as farmer?</button>
+      <button onclick="askAI('How does SMS advisory work?')" data-i18n="ai_q2">SMS advisory?</button>
+      <button onclick="askAI('How can I donate food?')" data-i18n="ai_q3">Donate food?</button>
+    </div>
+    <div class="ai-input-row">
+      <button id="voice-btn" title="Voice input" onclick="startVoice()"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="ai-input" data-i18n-ph="ai_placeholder" placeholder="Type or speak your question..." />
+      <button id="ai-send" onclick="sendAIMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="voice-indicator" class="voice-indicator hidden">
+      <div class="pulse-ring"></div>
+      <span data-i18n="voice_listening">🎤 Listening...</span>
+    </div>
+    <!-- Python backend note for developers -->
+    <!-- Backend: POST /api/chat with {message, lang, session_id} → Python Flask/FastAPI handles NLP via Claude API -->
+  </div>
+</div>
+
+<!-- ===== WHATSAPP FLOATING ===== -->
+<a href="https://wa.me/256700123456" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== DONATE FLOATING ===== -->
+<button class="donate-float" onclick="openModal('partner')" data-i18n="donate_float">💛 Donate Now</button>
+
+<script src="script.js"></script>
+</body>
+</html>
