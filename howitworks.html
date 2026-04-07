@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How It Works | Farm 2 Plate Connect — Platform & Technology</title>
+  <meta name="description" content="Discover how Farm 2 Plate Connect works — six integrated modules linking farmers, households, schools and NGOs through SMS, AI and mobile money."/>
+  <link rel="stylesheet" href="howitworks.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-leaf">🌾</span>
+      <span class="logo-text">Farm<em>2</em>Plate</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="howitworks.html" class="nav-current">How It Works</a></li>
+      <li><a href="impact.html">Our Impact</a></li>
+      <li><a href="blog.html">News &amp; Blog</a></li>
+      <li><a href="getinvolved.html">Get Involved</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-drop" id="lang-drop">
+        <button class="lang-trigger" id="lang-trigger">
+          <span id="lang-flag">🇬🇧</span>
+          <span id="lang-code">EN</span>
+          <i class="fas fa-chevron-down lang-arrow"></i>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-opt active" data-lang="en" data-flag="🇬🇧">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="lg" data-flag="🇺🇬">🇺🇬 Luganda</button>
+          <button class="lang-opt" data-lang="sw" data-flag="🌍">🌍 Kiswahili</button>
+        </div>
+      </div>
+      <button id="dark-btn" class="icon-btn" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <a href="getinvolved.html" class="nav-donate">Donate Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section id="hw-hero">
+  <div class="hwh-bg">
+    <div class="hwh-grid-lines"></div>
+    <div class="hwh-orb o1"></div>
+    <div class="hwh-orb o2"></div>
+  </div>
+  <div class="container hwh-inner">
+    <div class="hwh-breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>How It Works</span>
+    </div>
+    <span class="chip chip-outline">⚙️ The Platform</span>
+    <h1>Six Modules.<br/><em>One Ecosystem.</em></h1>
+    <p class="hwh-sub">From planting advice to meal delivery — Farm 2 Plate Connect runs on six tightly integrated modules, all accessible via SMS on any phone, anywhere in Uganda.</p>
+    <div class="hwh-pills">
+      <span>📱 SMS-First</span>
+      <span>🤖 AI-Powered</span>
+      <span>💳 Mobile Money</span>
+      <span>🐍 Python Backend</span>
+      <span>🌍 3 Languages</span>
+    </div>
+  </div>
+  <!-- Animated flow diagram in hero -->
+  <div class="container">
+    <div class="flow-diagram">
+      <div class="fd-node fd-farmer active" data-module="1">
+        <div class="fdn-icon">👨‍🌾</div>
+        <span>Farmer</span>
+      </div>
+      <div class="fd-pipe">
+        <div class="fd-pulse"></div>
+        <div class="fd-label">SMS Advisory</div>
+      </div>
+      <div class="fd-node fd-platform" data-module="platform">
+        <div class="fdn-icon">📱</div>
+        <span>Platform</span>
+      </div>
+      <div class="fd-pipe">
+        <div class="fd-pulse"></div>
+        <div class="fd-label">Matching AI</div>
+      </div>
+      <div class="fd-node fd-school" data-module="4">
+        <div class="fdn-icon">🏫</div>
+        <span>School</span>
+      </div>
+      <div class="fd-branch">
+        <div class="fd-branch-line"></div>
+        <div class="fd-node fd-household" data-module="2">
+          <div class="fdn-icon">🏠</div>
+          <span>Household</span>
+        </div>
+        <div class="fd-branch-line"></div>
+        <div class="fd-node fd-ngo" data-module="2">
+          <div class="fdn-icon">🤝</div>
+          <span>NGO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEP-BY-STEP TABS ===== -->
+<section id="modules">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📋 The Six Modules</span>
+      <h2>Every Step of the Journey</h2>
+      <p class="sec-sub">Click each module to explore how it works in detail.</p>
+    </div>
+
+    <!-- Tab Nav -->
+    <div class="module-tabs" id="module-tabs">
+      <button class="mt-btn active" data-tab="1">
+        <span class="mt-emoji">🌾</span>
+        <span class="mt-label">01 Farming</span>
+      </button>
+      <button class="mt-btn" data-tab="2">
+        <span class="mt-emoji">🛒</span>
+        <span class="mt-label">02 Marketplace</span>
+      </button>
+      <button class="mt-btn" data-tab="3">
+        <span class="mt-emoji">🚛</span>
+        <span class="mt-label">03 Logistics</span>
+      </button>
+      <button class="mt-btn" data-tab="4">
+        <span class="mt-emoji">🏫</span>
+        <span class="mt-label">04 Schools</span>
+      </button>
+      <button class="mt-btn" data-tab="5">
+        <span class="mt-emoji">💳</span>
+        <span class="mt-label">05 Finance</span>
+      </button>
+      <button class="mt-btn" data-tab="6">
+        <span class="mt-emoji">🥗</span>
+        <span class="mt-label">06 Nutrition</span>
+      </button>
+    </div>
+
+    <!-- Tab Panels -->
+    <div class="module-panels">
+
+      <!-- MODULE 1 -->
+      <div class="mp" id="tab-1" data-panel="1">
+        <div class="mp-left">
+          <div class="mp-num">01</div>
+          <span class="chip">🌾 Smart Farming Advisory</span>
+          <h2>Smarter Farms.<br/>Better Harvests.</h2>
+          <p>Farmers receive personalised SMS and voice messages with weather forecasts, optimal planting windows, pest and disease alerts, soil tips, and live market prices — all tailored to their district and crop type.</p>
+          <p>No internet. No smartphone. Just a basic phone and a SIM card.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-cloud-sun"></i><div><strong>Weather Forecasts</strong><p>7-day district-level weather sent every morning at 6am via SMS.</p></div></div>
+            <div class="mpf"><i class="fas fa-seedling"></i><div><strong>Planting Calendars</strong><p>AI-generated planting schedules based on crop, district, and rainfall patterns.</p></div></div>
+            <div class="mpf"><i class="fas fa-bug"></i><div><strong>Pest & Disease Alerts</strong><p>Early warning SMS when outbreaks are detected in nearby farms.</p></div></div>
+            <div class="mpf"><i class="fas fa-chart-line"></i><div><strong>Live Market Prices</strong><p>Real-time commodity prices from Owino, Nakawa, and Gulu markets.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>5,800+</strong><span>Farmers subscribed</span></div>
+            <div class="mps"><strong>2×</strong><span>Average yield increase</span></div>
+            <div class="mps"><strong>6am</strong><span>Daily SMS delivery</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="phone-mockup">
+            <div class="pm-screen">
+              <div class="pm-status">
+                <span>📶 MTN Uganda</span>
+                <span>9:00 AM</span>
+              </div>
+              <div class="pm-header">
+                <div class="pm-avatar">🌾</div>
+                <div>
+                  <strong>Farm2Plate Advisory</strong>
+                  <small>SMS Service</small>
+                </div>
+              </div>
+              <div class="pm-messages" id="sms-messages-1">
+                <div class="pm-msg incoming">
+                  🌤️ <strong>Weather Alert – Luwero</strong><br/>
+                  Rain expected Wed–Thu. Plant beans by Tue for optimal germination.<br/>
+                  <small>6:00 AM · Mon</small>
+                </div>
+                <div class="pm-msg incoming">
+                  📈 <strong>Market Update</strong><br/>
+                  Maize: UGX 2,400/kg (↑5%)<br/>
+                  Beans: UGX 3,100/kg (↓2%)<br/>
+                  Tomato: UGX 1,800/kg (stable)<br/>
+                  <small>6:01 AM · Mon</small>
+                </div>
+                <div class="pm-msg incoming">
+                  🐛 <strong>Pest Alert – Luwero District</strong><br/>
+                  Armyworm outbreak reported in Kamira sub-county. Apply neem spray immediately. Call 0800-FARM2P for free advice.<br/>
+                  <small>7:30 AM · Mon</small>
+                </div>
+              </div>
+              <div class="pm-input-row">
+                <div class="pm-input">Reply with STOP to unsubscribe</div>
+              </div>
+            </div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>Django + Celery sends 50K+ SMS/day via Africa's Talking API. OpenWeatherMap API for forecasts. ML model for pest prediction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 2 -->
+      <div class="mp hidden" id="tab-2" data-panel="2">
+        <div class="mp-left">
+          <div class="mp-num">02</div>
+          <span class="chip">🛒 Digital Marketplace</span>
+          <h2>Direct Sales.<br/>Zero Middlemen.</h2>
+          <p>Farmers list their produce directly on the platform. Buyers — households, schools, restaurants, and NGOs — browse and order. Surplus food is automatically matched to vulnerable families and donation partners.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-store"></i><div><strong>Direct Listings</strong><p>Farmers list produce via SMS: "LIST TOMATO 50KG 1800 LUWERO" — no smartphone needed.</p></div></div>
+            <div class="mpf"><i class="fas fa-robot"></i><div><strong>AI Surplus Matching</strong><p>Unsold food is automatically matched to NGOs, food banks, and vulnerable households within 24 hours.</p></div></div>
+            <div class="mpf"><i class="fas fa-tags"></i><div><strong>Fair Pricing Engine</strong><p>AI analyses market trends to suggest fair prices, preventing exploitation of farmers.</p></div></div>
+            <div class="mpf"><i class="fas fa-heart"></i><div><strong>Donation Portal</strong><p>NGOs and individuals can donate money to purchase surplus food for families in need.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>4,200+</strong><span>Active listings</span></div>
+            <div class="mps"><strong>40%</strong><span>Less food wasted</span></div>
+            <div class="mps"><strong>UGX 2,400</strong><span>Avg. fair price/kg</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="marketplace-demo">
+            <div class="md-header"><i class="fas fa-store"></i> Live Marketplace</div>
+            <div class="md-listing">
+              <span class="mdl-emoji">🍅</span>
+              <div class="mdl-info">
+                <strong>Fresh Tomatoes</strong>
+                <small>Luwero District · John Ssemakula</small>
+                <div class="mdl-meta"><span class="mdl-qty">80 kg</span><span class="mdl-price">UGX 1,800/kg</span></div>
+              </div>
+              <button class="mdl-btn">Order</button>
+            </div>
+            <div class="md-listing">
+              <span class="mdl-emoji">🌽</span>
+              <div class="mdl-info">
+                <strong>Dried Maize</strong>
+                <small>Gulu District · Grace Aber</small>
+                <div class="mdl-meta"><span class="mdl-qty">500 kg</span><span class="mdl-price">UGX 2,400/kg</span></div>
+              </div>
+              <button class="mdl-btn">Order</button>
+            </div>
+            <div class="md-listing surplus">
+              <span class="mdl-emoji">🥦</span>
+              <div class="mdl-info">
+                <strong>Surplus Broccoli</strong>
+                <small>Wakiso · Matched to 3 families</small>
+                <div class="mdl-meta"><span class="mdl-qty surplus-tag">Donated</span><span class="mdl-price">Via WFP Fund</span></div>
+              </div>
+              <span class="mdl-matched"><i class="fas fa-check-circle"></i> Matched</span>
+            </div>
+            <div class="md-listing">
+              <span class="mdl-emoji">🥕</span>
+              <div class="mdl-info">
+                <strong>Organic Carrots</strong>
+                <small>Kabale District · Rose Kyomugisha</small>
+                <div class="mdl-meta"><span class="mdl-qty">60 kg</span><span class="mdl-price">UGX 2,100/kg</span></div>
+              </div>
+              <button class="mdl-btn">Order</button>
+            </div>
+            <div class="md-footer"><i class="fas fa-sync-alt fa-spin"></i> 4,247 active listings · Updated live</div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>FastAPI REST endpoints. PostgreSQL database. ML matching algorithm pairs surplus with demand. Africa's Talking SMS for listing via basic phone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 3 -->
+      <div class="mp hidden" id="tab-3" data-panel="3">
+        <div class="mp-left">
+          <div class="mp-num">03</div>
+          <span class="chip">🚛 Logistics Network</span>
+          <h2>AI-Optimised<br/>Delivery Routes.</h2>
+          <p>Our platform connects farmers with a network of boda bodas, pickup trucks, and refrigerated vehicles. An AI routing engine calculates the fastest, cheapest delivery path — reducing transport costs by up to 35%.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-motorcycle"></i><div><strong>Boda Boda Network</strong><p>680+ registered boda boda riders available for same-day collection from farms.</p></div></div>
+            <div class="mpf"><i class="fas fa-route"></i><div><strong>AI Route Optimisation</strong><p>Python algorithm calculates multi-stop delivery routes, minimising distance and fuel cost.</p></div></div>
+            <div class="mpf"><i class="fas fa-map-marker-alt"></i><div><strong>Real-Time Tracking</strong><p>Farmers and buyers receive SMS updates at each stage of the delivery journey.</p></div></div>
+            <div class="mpf"><i class="fas fa-snowflake"></i><div><strong>Cold Chain Links</strong><p>Refrigerated vehicle partnerships for dairy, meat, and perishable produce transport.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>680+</strong><span>Transporters active</span></div>
+            <div class="mps"><strong>35%</strong><span>Cost reduction</span></div>
+            <div class="mps"><strong>4h</strong><span>Avg. delivery time</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="logistics-demo">
+            <div class="ld-header"><i class="fas fa-route"></i> Active Deliveries</div>
+            <div class="ld-job">
+              <div class="ldj-route">
+                <span class="ldj-from">🌾 Luwero Farm</span>
+                <div class="ldj-line"><div class="ldj-truck">🚛</div></div>
+                <span class="ldj-to">🏫 Kampala School</span>
+              </div>
+              <div class="ldj-meta">
+                <span><i class="fas fa-box"></i> 120 kg Maize</span>
+                <span><i class="fas fa-clock"></i> ETA 2.5h</span>
+                <span class="ldj-status in-transit">In Transit</span>
+              </div>
+            </div>
+            <div class="ld-job">
+              <div class="ldj-route">
+                <span class="ldj-from">🌾 Wakiso Farm</span>
+                <div class="ldj-line"><div class="ldj-truck" style="left:65%">🏍️</div></div>
+                <span class="ldj-to">🏠 Household</span>
+              </div>
+              <div class="ldj-meta">
+                <span><i class="fas fa-box"></i> 30 kg Vegs</span>
+                <span><i class="fas fa-clock"></i> ETA 45min</span>
+                <span class="ldj-status arriving">Arriving Soon</span>
+              </div>
+            </div>
+            <div class="ld-job">
+              <div class="ldj-route">
+                <span class="ldj-from">🌾 Gulu Farm</span>
+                <div class="ldj-line"><div class="ldj-truck" style="left:20%">🚛</div></div>
+                <span class="ldj-to">🤝 WFP Hub</span>
+              </div>
+              <div class="ldj-meta">
+                <span><i class="fas fa-box"></i> 500 kg Beans</span>
+                <span><i class="fas fa-clock"></i> ETA 6h</span>
+                <span class="ldj-status picked-up">Picked Up</span>
+              </div>
+            </div>
+            <div class="ld-footer"><i class="fas fa-map-marker-alt"></i> 124 active deliveries across Uganda right now</div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>Google Maps API + custom Dijkstra route optimisation in Python. WebSocket real-time tracking. SMS status updates via Africa's Talking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="mp hidden" id="tab-4" data-panel="4">
+        <div class="mp-left">
+          <div class="mp-num">04</div>
+          <span class="chip">🏫 School Feeding Link</span>
+          <h2>Fresh Food.<br/>Brighter Futures.</h2>
+          <p>Schools place standing orders directly from verified local farmers — bypassing expensive middlemen and ensuring children receive fresher, more nutritious meals. The platform handles scheduling, payment, and delivery coordination automatically.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-calendar-check"></i><div><strong>Standing Orders</strong><p>Schools set weekly or monthly food orders. Farmers get predictable, reliable income.</p></div></div>
+            <div class="mpf"><i class="fas fa-apple-alt"></i><div><strong>Nutrition Standards</strong><p>Each meal plan is reviewed against WHO child nutrition guidelines by our health team.</p></div></div>
+            <div class="mpf"><i class="fas fa-hand-holding-usd"></i><div><strong>NGO Subsidy Integration</strong><p>WFP and UNICEF funds automatically subsidise meals for schools in food-insecure districts.</p></div></div>
+            <div class="mpf"><i class="fas fa-chart-bar"></i><div><strong>Nutrition Reporting</strong><p>Schools receive monthly nutrition dashboards showing meal quality and child health trends.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>320+</strong><span>Schools connected</span></div>
+            <div class="mps"><strong>48,000</strong><span>Children fed daily</span></div>
+            <div class="mps"><strong>30%</strong><span>Stunting reduction</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="school-demo">
+            <div class="sd-header"><i class="fas fa-school"></i> School Dashboard</div>
+            <div class="sd-school-name">St. Mary's Primary School · Kampala</div>
+            <div class="sd-week">
+              <div class="sd-day">
+                <strong>Mon</strong>
+                <span>🌽 Posho</span>
+                <span>🫘 Beans</span>
+                <small class="sd-cal">420 kcal</small>
+              </div>
+              <div class="sd-day">
+                <strong>Tue</strong>
+                <span>🍚 Rice</span>
+                <span>🥦 Veg stew</span>
+                <small class="sd-cal">410 kcal</small>
+              </div>
+              <div class="sd-day">
+                <strong>Wed</strong>
+                <span>🥔 Matoke</span>
+                <span>🥩 Groundnuts</span>
+                <small class="sd-cal">450 kcal</small>
+              </div>
+              <div class="sd-day active-day">
+                <strong>Thu</strong>
+                <span>🌾 Millet</span>
+                <span>🍅 Sauce</span>
+                <small class="sd-cal">390 kcal · Today</small>
+              </div>
+              <div class="sd-day">
+                <strong>Fri</strong>
+                <span>🍠 Sweet pot.</span>
+                <span>🥛 Milk</span>
+                <small class="sd-cal">430 kcal</small>
+              </div>
+            </div>
+            <div class="sd-source">
+              <i class="fas fa-map-marker-alt"></i>
+              Sourced from 4 local farmers within 15km radius
+            </div>
+            <div class="sd-subsidy">
+              <i class="fas fa-heart"></i>
+              <span>WFP subsidy applied · 100% cost covered for 320 pupils</span>
+            </div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>Django admin for school meal planning. Nutritional analysis API. Automated weekly order scheduling. WFP/UNICEF fund disbursement via MTN MoMo API.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 5 -->
+      <div class="mp hidden" id="tab-5" data-panel="5">
+        <div class="mp-left">
+          <div class="mp-num">05</div>
+          <span class="chip">💳 Mobile Money &amp; Finance</span>
+          <h2>Instant Payments.<br/>Microfinance Access.</h2>
+          <p>Every transaction on the platform flows through MTN Mobile Money or Airtel Money — the two networks covering 95% of Uganda. Farmers get paid instantly upon delivery confirmation, with no bank account required.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-bolt"></i><div><strong>Instant Settlements</strong><p>Farmers receive payment within 60 seconds of delivery confirmation via MTN MoMo or Airtel Money.</p></div></div>
+            <div class="mpf"><i class="fas fa-piggy-bank"></i><div><strong>Savings Wallets</strong><p>Farmers can open a Farm2Plate savings account and earn 8% annual interest on stored earnings.</p></div></div>
+            <div class="mpf"><i class="fas fa-hand-holding-usd"></i><div><strong>Microloans</strong><p>Farmers with 3+ months on the platform can access loans of UGX 200,000–2,000,000 for seeds and inputs.</p></div></div>
+            <div class="mpf"><i class="fas fa-shield-alt"></i><div><strong>Crop Insurance</strong><p>Parametric weather insurance automatically pays out when rainfall falls below threshold levels.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>UGX 4.2B</strong><span>Transactions processed</span></div>
+            <div class="mps"><strong>60s</strong><span>Payment settlement</span></div>
+            <div class="mps"><strong>8%</strong><span>Savings interest rate</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="finance-demo">
+            <div class="fnd-header"><i class="fas fa-wallet"></i> Farmer Wallet · John Ssemakula</div>
+            <div class="fnd-balance">
+              <small>Available Balance</small>
+              <div class="fnd-amount">UGX <span id="balance-num">847,500</span></div>
+              <div class="fnd-network"><span>📡 MTN MoMo</span><span>● Connected</span></div>
+            </div>
+            <div class="fnd-txns">
+              <div class="fnd-txn credit">
+                <span><i class="fas fa-arrow-down"></i></span>
+                <div><strong>Payment received</strong><small>50kg Tomatoes · Wakiso School</small></div>
+                <span class="txn-amt credit-amt">+UGX 90,000</span>
+              </div>
+              <div class="fnd-txn credit">
+                <span><i class="fas fa-arrow-down"></i></span>
+                <div><strong>Payment received</strong><small>120kg Maize · WFP Uganda</small></div>
+                <span class="txn-amt credit-amt">+UGX 288,000</span>
+              </div>
+              <div class="fnd-txn debit">
+                <span><i class="fas fa-arrow-up"></i></span>
+                <div><strong>Transport fee</strong><small>Delivery to Kampala</small></div>
+                <span class="txn-amt debit-amt">−UGX 15,000</span>
+              </div>
+              <div class="fnd-txn credit">
+                <span><i class="fas fa-piggy-bank"></i></span>
+                <div><strong>Interest earned</strong><small>Monthly savings reward</small></div>
+                <span class="txn-amt credit-amt">+UGX 5,640</span>
+              </div>
+            </div>
+            <div class="fnd-actions">
+              <button class="fnd-btn"><i class="fas fa-paper-plane"></i> Send</button>
+              <button class="fnd-btn"><i class="fas fa-piggy-bank"></i> Save</button>
+              <button class="fnd-btn fnd-loan"><i class="fas fa-hand-holding-usd"></i> Apply Loan</button>
+            </div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>MTN MoMo API + Airtel Money API integrated via Python SDK. Django REST Framework handles transaction logic. Redis for real-time balance updates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 6 -->
+      <div class="mp hidden" id="tab-6" data-panel="6">
+        <div class="mp-left">
+          <div class="mp-num">06</div>
+          <span class="chip">🥗 Nutrition AI Messaging</span>
+          <h2>Smarter Eating.<br/>Healthier Lives.</h2>
+          <p>Our AI nutrition engine sends weekly personalised SMS tips to households, focusing on child health, pregnancy nutrition, and how to prepare balanced meals from locally available and affordable foods.</p>
+          <div class="mp-features">
+            <div class="mpf"><i class="fas fa-baby"></i><div><strong>Child Nutrition Tips</strong><p>Age-specific feeding guidance for children 0–5, targeting stunting prevention and healthy development.</p></div></div>
+            <div class="mpf"><i class="fas fa-female"></i><div><strong>Pregnancy Nutrition</strong><p>Tailored SMS tips for pregnant and breastfeeding mothers on iron, folate, and protein-rich local foods.</p></div></div>
+            <div class="mpf"><i class="fas fa-utensils"></i><div><strong>Recipe Suggestions</strong><p>Weekly recipes using seasonal, locally available, affordable ingredients from the Farm2Plate market.</p></div></div>
+            <div class="mpf"><i class="fas fa-heartbeat"></i><div><strong>Health Alerts</strong><p>Community-level disease outbreak warnings and hygiene reminders during high-risk seasons.</p></div></div>
+          </div>
+          <div class="mp-stats">
+            <div class="mps"><strong>24,000+</strong><span>Households subscribed</span></div>
+            <div class="mps"><strong>Weekly</strong><span>SMS tips sent</span></div>
+            <div class="mps"><strong>30%</strong><span>Stunting reduction target</span></div>
+          </div>
+        </div>
+        <div class="mp-right">
+          <div class="nutrition-demo">
+            <div class="nd-header"><i class="fas fa-heartbeat"></i> Nutrition AI · Weekly Tips</div>
+            <div class="nd-tip">
+              <div class="nd-tip-icon">👶</div>
+              <div class="nd-tip-body">
+                <strong>Child Nutrition Tip — Week 14</strong>
+                <p>For children 6–23 months, add mashed beans or groundnut paste to porridge 3× daily. This provides protein for brain development and prevents stunting.</p>
+                <div class="nd-foods"><span>🫘 Beans</span><span>🥜 Groundnuts</span><span>🌽 Maize</span></div>
+              </div>
+            </div>
+            <div class="nd-tip">
+              <div class="nd-tip-icon">🍲</div>
+              <div class="nd-tip-body">
+                <strong>Recipe of the Week</strong>
+                <p><em>Millet &amp; Pumpkin Porridge</em> — Boil millet flour with diced pumpkin, add groundnut paste and a pinch of salt. Rich in vitamin A, iron, and zinc.</p>
+                <div class="nd-foods"><span>🌾 Millet</span><span>🎃 Pumpkin</span><span>🥜 Groundnut</span></div>
+              </div>
+            </div>
+            <div class="nd-footer">
+              Personalised for: <strong>Grace, Kampala · 1 child (14 months)</strong>
+            </div>
+          </div>
+          <div class="mp-tech-note">
+            <i class="fab fa-python"></i>
+            <div>
+              <strong>Python Backend</strong>
+              <p>Claude AI (Anthropic) generates personalised nutrition tips. User profiles stored in PostgreSQL. Africa's Talking SMS scheduler delivers tips every Tuesday at 8am.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end module-panels -->
+  </div>
+</section>
+
+<!-- ===== TECH STACK ===== -->
+<section id="tech" class="dark-sec">
+  <div class="container">
+    <div class="sec-head left">
+      <span class="chip chip-y">🐍 Technology Stack</span>
+      <h2>Built on Rock-Solid<br/>Open Technology</h2>
+      <p>Every module is powered by battle-tested, open-source Python tools — designed to scale from 5,000 to 5,000,000 users without rebuilding.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-layer">
+        <div class="tl-label">Frontend</div>
+        <div class="tl-items">
+          <div class="tl-item"><span>🌐</span><strong>HTML/CSS/JS</strong><small>Responsive web</small></div>
+          <div class="tl-item"><span>📱</span><strong>PWA</strong><small>Mobile app feel</small></div>
+          <div class="tl-item"><span>📊</span><strong>Chart.js</strong><small>Dashboards</small></div>
+        </div>
+      </div>
+      <div class="tech-arrow"><i class="fas fa-exchange-alt"></i></div>
+      <div class="tech-layer tl-highlight">
+        <div class="tl-label">Backend (Python)</div>
+        <div class="tl-items">
+          <div class="tl-item"><span>🐍</span><strong>Django / FastAPI</strong><small>Core API</small></div>
+          <div class="tl-item"><span>⚙️</span><strong>Celery + Redis</strong><small>Task queues</small></div>
+          <div class="tl-item"><span>🤖</span><strong>Claude AI API</strong><small>Nutrition AI</small></div>
+          <div class="tl-item"><span>🗺️</span><strong>Route Optimiser</strong><small>Dijkstra algo</small></div>
+        </div>
+      </div>
+      <div class="tech-arrow"><i class="fas fa-exchange-alt"></i></div>
+      <div class="tech-layer">
+        <div class="tl-label">Integrations</div>
+        <div class="tl-items">
+          <div class="tl-item"><span>📡</span><strong>Africa's Talking</strong><small>SMS / USSD / Voice</small></div>
+          <div class="tl-item"><span>💳</span><strong>MTN MoMo API</strong><small>Payments</small></div>
+          <div class="tl-item"><span>📶</span><strong>Airtel Money</strong><small>Payments</small></div>
+          <div class="tl-item"><span>🌤️</span><strong>OpenWeatherMap</strong><small>Forecasts</small></div>
+        </div>
+      </div>
+      <div class="tech-arrow"><i class="fas fa-exchange-alt"></i></div>
+      <div class="tech-layer">
+        <div class="tl-label">Data &amp; Infra</div>
+        <div class="tl-items">
+          <div class="tl-item"><span>🐘</span><strong>PostgreSQL</strong><small>Primary DB</small></div>
+          <div class="tl-item"><span>🔴</span><strong>Redis</strong><small>Cache / queues</small></div>
+          <div class="tl-item"><span>☁️</span><strong>AWS / GCP</strong><small>Cloud hosting</small></div>
+          <div class="tl-item"><span>🔒</span><strong>SSL + Auth</strong><small>Security</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SMS DEMO SIMULATOR ===== -->
+<section id="sms-demo">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📲 Try It Yourself</span>
+      <h2>See the SMS System in Action</h2>
+      <p class="sec-sub">Type a message as if you were a farmer — our AI will show you what Farm2Plate would send back.</p>
+    </div>
+    <div class="sms-simulator">
+      <div class="sim-phone">
+        <div class="sim-screen">
+          <div class="sim-bar">
+            <span>📶 MTN Uganda</span><span>Farm2Plate</span>
+          </div>
+          <div class="sim-messages" id="sim-msgs">
+            <div class="sim-msg incoming">
+              Welcome to Farm2Plate! 🌾<br/>
+              Send: WEATHER, PRICE [crop], REGISTER, ADVISORY, or HELP<br/>
+              <small>Farm2Plate · Now</small>
+            </div>
+          </div>
+          <div class="sim-input-row">
+            <input type="text" id="sim-input" placeholder="e.g. PRICE MAIZE or WEATHER" maxlength="60"/>
+            <button id="sim-send" onclick="simulateSMS()"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="sim-commands">
+        <h4>Try these commands:</h4>
+        <div class="sim-cmd-grid">
+          <button onclick="tryCmd('WEATHER KAMPALA')">WEATHER KAMPALA</button>
+          <button onclick="tryCmd('PRICE MAIZE')">PRICE MAIZE</button>
+          <button onclick="tryCmd('PRICE TOMATO')">PRICE TOMATO</button>
+          <button onclick="tryCmd('REGISTER FARMER')">REGISTER FARMER</button>
+          <button onclick="tryCmd('ADVISORY BEANS')">ADVISORY BEANS</button>
+          <button onclick="tryCmd('LIST TOMATO 50KG 1800')">LIST TOMATO 50KG 1800</button>
+          <button onclick="tryCmd('HELP')">HELP</button>
+          <button onclick="tryCmd('NUTRITION')">NUTRITION</button>
+        </div>
+        <div class="sim-note">
+          <i class="fas fa-info-circle"></i>
+          This simulator runs on the same AI that powers real Farm2Plate SMS responses — accessible from any basic phone in Uganda.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW SUMMARY ===== -->
+<section id="flow-summary" class="light-sec">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">🔄 The Full Journey</span>
+      <h2>Farm to Plate in 6 Steps</h2>
+    </div>
+    <div class="journey-steps">
+      <div class="js-step">
+        <div class="jss-circle"><span>🌾</span></div>
+        <div class="jss-line"></div>
+        <h4>Farmer Plants</h4>
+        <p>Receives SMS planting advice and weather alerts</p>
+      </div>
+      <div class="js-step">
+        <div class="jss-circle"><span>📱</span></div>
+        <div class="jss-line"></div>
+        <h4>Lists Produce</h4>
+        <p>SMS listing goes live on digital marketplace</p>
+      </div>
+      <div class="js-step">
+        <div class="jss-circle"><span>🤖</span></div>
+        <div class="jss-line"></div>
+        <h4>AI Matches</h4>
+        <p>Surplus matched to schools, NGOs, households</p>
+      </div>
+      <div class="js-step">
+        <div class="jss-circle"><span>🚛</span></div>
+        <div class="jss-line"></div>
+        <h4>Delivery Arranged</h4>
+        <p>Boda or truck dispatched via AI route plan</p>
+      </div>
+      <div class="js-step">
+        <div class="jss-circle"><span>💳</span></div>
+        <div class="jss-line"></div>
+        <h4>Farmer Paid</h4>
+        <p>Mobile money hits wallet in 60 seconds</p>
+      </div>
+      <div class="js-step">
+        <div class="jss-circle last-circle"><span>🍽️</span></div>
+        <div class="jss-line invisible-line"></div>
+        <h4>Family Eats</h4>
+        <p>Nutritious food reaches the plate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="hw-cta" class="cta-sec">
+  <div class="container">
+    <div class="hw-cta-inner">
+      <div class="hwc-left">
+        <span class="chip chip-y">🚀 Ready to Join?</span>
+        <h2>Be Part of the Platform.</h2>
+        <p>Whether you're a farmer wanting better prices, a school needing food, or an NGO wanting to donate — the platform is free to join and works on any phone.</p>
+        <div class="hwc-btns">
+          <a href="getinvolved.html" class="btn-primary">Register Now — Free</a>
+          <a href="contact.html" class="btn-ghost">Talk to Our Team</a>
+        </div>
+      </div>
+      <div class="hwc-right">
+        <div class="hwc-modules">
+          <div class="hwcm" style="--mc:#2d7a4f"><span>🌾</span> Smart Advisory</div>
+          <div class="hwcm" style="--mc:#c0390a"><span>🛒</span> Marketplace</div>
+          <div class="hwcm" style="--mc:#1a4d7a"><span>🚛</span> Logistics</div>
+          <div class="hwcm" style="--mc:#7a4d1a"><span>🏫</span> School Feeding</div>
+          <div class="hwcm" style="--mc:#4d1a7a"><span>💳</span> Mobile Finance</div>
+          <div class="hwcm" style="--mc:#1a7a4d"><span>🥗</span> Nutrition AI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner container">
+    <div class="ft-brand">
+      <div class="ft-logo-text"><span>🌾</span> Farm<em>2</em>Plate</div>
+      <p>Connecting farms to families. Ending hunger with technology in Uganda and beyond.</p>
+      <div class="ft-soc">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Platform</h4><a href="howitworks.html">How It Works</a><a href="impact.html">Impact Dashboard</a><a href="getinvolved.html">Register</a><a href="blog.html">News &amp; Blog</a></div>
+    <div class="ft-col"><h4>Organisation</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="index.html#partners">Partners</a><a href="getinvolved.html">Get Involved</a></div>
+    <div class="ft-col"><h4>Legal &amp; Contact</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="#">Data Policy</a></div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 Farm 2 Plate Connect. All rights reserved.</p>
+    <p><i class="fas fa-lock"></i> SSL Secured · Verified Organisation</p>
+  </div>
+</footer>
+
+<!-- AI ASSISTANT -->
+<div id="ai-widget">
+  <button id="ai-fab" onclick="toggleAI()">
+    <i class="fas fa-robot"></i>
+    <div class="ai-ring"></div>
+  </button>
+  <div id="ai-panel">
+    <div class="ap-head">
+      <span>🤖</span>
+      <div><strong>FarmBot AI</strong><small>● Online · Replies instantly</small></div>
+      <button onclick="toggleAI()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ap-msgs" id="ap-msgs">
+      <div class="ai-msg bot">👋 Ask me how any of the 6 modules work — SMS, marketplace, logistics, schools, finance or nutrition!</div>
+    </div>
+    <div class="ap-quick">
+      <button onclick="askAI('How does the SMS advisory work?')">SMS advisory?</button>
+      <button onclick="askAI('How does the marketplace work?')">Marketplace?</button>
+      <button onclick="askAI('How do farmers get paid?')">Payments?</button>
+    </div>
+    <div class="ap-input">
+      <button id="mic-btn" onclick="startVoice()"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="ap-in" placeholder="Ask about any module..." onkeypress="if(event.key==='Enter')sendAI()"/>
+      <button onclick="sendAI()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="voice-bar" class="v-bar hidden"><div class="v-dot"></div><span>Listening...</span></div>
+  </div>
+</div>
+
+<a href="https://wa.me/256700123456" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="donate-btn" onclick="window.location='getinvolved.html'">💛 Donate</button>
+
+<script src="howitworks.js"></script>
+</body>
+</html>

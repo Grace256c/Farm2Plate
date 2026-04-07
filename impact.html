@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Impact | Farm 2 Plate Connect — Data, Results & Stories</title>
+  <meta name="description" content="Real numbers, real change. See how Farm 2 Plate Connect is ending food insecurity across Uganda — dashboards, charts, stories and district data."/>
+  <link rel="stylesheet" href="impact.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-leaf">🌾</span>
+      <span class="logo-text">Farm<em>2</em>Plate</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="howitworks.html">How It Works</a></li>
+      <li><a href="impact.html" class="nav-current">Our Impact</a></li>
+      <li><a href="blog.html">News &amp; Blog</a></li>
+      <li><a href="getinvolved.html">Get Involved</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-drop" id="lang-drop">
+        <button class="lang-trigger" id="lang-trigger">
+          <span id="lang-flag">🇬🇧</span>
+          <span id="lang-code">EN</span>
+          <i class="fas fa-chevron-down lang-arrow"></i>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-opt active" data-lang="en" data-flag="🇬🇧">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="lg" data-flag="🇺🇬">🇺🇬 Luganda</button>
+          <button class="lang-opt" data-lang="sw" data-flag="🌍">🌍 Kiswahili</button>
+        </div>
+      </div>
+      <button id="dark-btn" class="icon-btn" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <a href="getinvolved.html" class="nav-donate">Donate Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== LIVE TICKER ===== -->
+<div class="live-ticker" id="live-ticker">
+  <div class="lt-badge"><i class="fas fa-circle"></i> LIVE</div>
+  <div class="lt-track" id="lt-track">
+    <span>🌾 John from Luwero just listed 200kg Maize</span>
+    <span>💛 WFP Uganda donated UGX 4,500,000 to the food pool</span>
+    <span>🏫 St. Mary's School placed a weekly order for 80kg vegetables</span>
+    <span>🚛 Delivery #1,247 completed — Wakiso to Kampala</span>
+    <span>👶 Grace's child nutrition tip was read by 3,200 families today</span>
+    <span>💳 Moses received UGX 288,000 payment in 12 seconds via MTN MoMo</span>
+    <span>🌾 John from Luwero just listed 200kg Maize</span>
+    <span>💛 WFP Uganda donated UGX 4,500,000 to the food pool</span>
+    <span>🏫 St. Mary's School placed a weekly order for 80kg vegetables</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="impact-hero">
+  <div class="ih-bg">
+    <div class="ih-orb o1"></div>
+    <div class="ih-orb o2"></div>
+    <div class="ih-dots"></div>
+  </div>
+  <div class="container ih-inner">
+    <div class="ih-breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Our Impact</span>
+    </div>
+    <span class="chip chip-outline">📊 Real Numbers. Real Change.</span>
+    <h1>Every Number<br/><em>Is a Life.</em></h1>
+    <p class="ih-sub">We measure what matters — not just downloads or signups, but meals served, children nourished, farmers lifted out of poverty, and food saved from waste.</p>
+    <!-- Big live counter strip -->
+    <div class="ih-counters">
+      <div class="ihc">
+        <div class="ihc-val"><span class="big-counter" data-target="5800">0</span><sup>+</sup></div>
+        <p>Farmers Registered</p>
+        <div class="ihc-bar"><div class="ihc-fill" style="width:58%"></div></div>
+      </div>
+      <div class="ihc-sep"></div>
+      <div class="ihc">
+        <div class="ihc-val"><span class="big-counter" data-target="12000">0</span><sup>+</sup></div>
+        <p>Households Fed</p>
+        <div class="ihc-bar"><div class="ihc-fill" style="width:72%"></div></div>
+      </div>
+      <div class="ihc-sep"></div>
+      <div class="ihc">
+        <div class="ihc-val"><span class="big-counter" data-target="320">0</span><sup>+</sup></div>
+        <p>Schools Connected</p>
+        <div class="ihc-bar"><div class="ihc-fill" style="width:45%"></div></div>
+      </div>
+      <div class="ihc-sep"></div>
+      <div class="ihc">
+        <div class="ihc-val"><span class="big-counter" data-target="48000">0</span><sup>+</sup></div>
+        <p>Children Fed Daily</p>
+        <div class="ihc-bar"><div class="ihc-fill" style="width:80%"></div></div>
+      </div>
+      <div class="ihc-sep"></div>
+      <div class="ihc">
+        <div class="ihc-val"><span class="big-counter" data-target="680">0</span><sup>+</sup></div>
+        <p>Transporters Active</p>
+        <div class="ihc-bar"><div class="ihc-fill" style="width:34%"></div></div>
+      </div>
+    </div>
+    <div class="ih-updated">
+      <i class="fas fa-sync-alt fa-spin"></i>
+      Data updated: <strong>Today, April 2025</strong> · Next refresh in <span id="refresh-countdown">60</span>s
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY METRICS DASHBOARD ===== -->
+<section id="dashboard">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📈 Impact Dashboard</span>
+      <h2>Platform Performance at a Glance</h2>
+      <p class="sec-sub">Simulated live data showing cumulative results since January 2022.</p>
+    </div>
+
+    <!-- Metric cards grid -->
+    <div class="metrics-grid">
+      <div class="mc green-card">
+        <div class="mc-icon">🌱</div>
+        <div class="mc-body">
+          <div class="mc-val"><span class="counter" data-target="40">0</span>%</div>
+          <h4>Less Food Wasted</h4>
+          <p>Post-harvest waste reduced through AI surplus matching and direct market connections.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +12% vs 2023</div>
+        </div>
+      </div>
+      <div class="mc yellow-card">
+        <div class="mc-icon">💰</div>
+        <div class="mc-body">
+          <div class="mc-val"><span class="counter" data-target="65">0</span>%</div>
+          <h4>Farmer Income Increase</h4>
+          <p>Average income uplift for registered farmers compared to non-platform peers.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +18% vs 2023</div>
+        </div>
+      </div>
+      <div class="mc cream-card">
+        <div class="mc-icon">👶</div>
+        <div class="mc-body">
+          <div class="mc-val"><span class="counter" data-target="30">0</span>%</div>
+          <h4>Child Stunting Reduction</h4>
+          <p>Reduction in stunting rates in districts where school feeding programme is active.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +8% vs 2023</div>
+        </div>
+      </div>
+      <div class="mc dark-card">
+        <div class="mc-icon">🏫</div>
+        <div class="mc-body">
+          <div class="mc-val">UGX <span class="counter" data-target="4200">0</span>M</div>
+          <h4>Transactions Processed</h4>
+          <p>Total mobile money payments flowing through the platform since launch.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +34% vs 2023</div>
+        </div>
+      </div>
+      <div class="mc green-card">
+        <div class="mc-icon">🚛</div>
+        <div class="mc-body">
+          <div class="mc-val"><span class="counter" data-target="35">0</span>%</div>
+          <h4>Transport Cost Reduction</h4>
+          <p>Savings achieved through AI route optimisation for farmers and transporters.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +7% vs 2023</div>
+        </div>
+      </div>
+      <div class="mc yellow-card">
+        <div class="mc-icon">📱</div>
+        <div class="mc-body">
+          <div class="mc-val"><span class="counter" data-target="50000">0</span>+</div>
+          <h4>SMS Messages/Day</h4>
+          <p>Daily advisory and nutrition messages delivered to farmers and households.</p>
+          <div class="mc-trend up"><i class="fas fa-arrow-up"></i> +22% vs 2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHARTS SECTION ===== -->
+<section id="charts" class="light-sec">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📊 Data Trends</span>
+      <h2>Progress Over Time</h2>
+      <p class="sec-sub">Tracking our key indicators from platform launch to today.</p>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-card wide-chart">
+        <div class="cc-head">
+          <h4>Farmer Growth &amp; Income (2022–2025)</h4>
+          <div class="cc-legend">
+            <span class="leg-dot" style="background:var(--g)"></span>Farmers
+            <span class="leg-dot" style="background:var(--y)"></span>Avg Income (UGX 000s)
+          </div>
+        </div>
+        <canvas id="growthChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="cc-head"><h4>Food Waste Reduction</h4></div>
+        <canvas id="wasteChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="cc-head"><h4>Children Fed by District</h4></div>
+        <canvas id="childrenChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="cc-head"><h4>Transaction Volume (UGX M)</h4></div>
+        <canvas id="txnChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="cc-head"><h4>Platform User Breakdown</h4></div>
+        <canvas id="userChart"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISTRICT BREAKDOWN ===== -->
+<section id="districts" class="dark-sec">
+  <div class="container">
+    <div class="sec-head left">
+      <span class="chip chip-y">🗺️ District Impact</span>
+      <h2>Coverage Across Uganda</h2>
+      <p>Breaking down our reach — farmers, schools and households connected in each region.</p>
+    </div>
+    <div class="districts-layout">
+      <div class="dt-table-wrap">
+        <table class="dt-table">
+          <thead>
+            <tr>
+              <th>District</th>
+              <th>Farmers</th>
+              <th>Schools</th>
+              <th>Households</th>
+              <th>Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dt-top">
+              <td><span class="dt-flag">🏙️</span> Kampala</td>
+              <td><strong>1,240</strong></td>
+              <td>88</td>
+              <td>3,400</td>
+              <td><div class="dt-bar"><div style="width:92%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🌿</span> Wakiso</td>
+              <td><strong>940</strong></td>
+              <td>54</td>
+              <td>2,100</td>
+              <td><div class="dt-bar"><div style="width:78%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🌾</span> Gulu</td>
+              <td><strong>820</strong></td>
+              <td>42</td>
+              <td>1,800</td>
+              <td><div class="dt-bar"><div style="width:68%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">⛰️</span> Mbale</td>
+              <td><strong>610</strong></td>
+              <td>36</td>
+              <td>1,200</td>
+              <td><div class="dt-bar"><div style="width:55%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🐄</span> Mbarara</td>
+              <td><strong>580</strong></td>
+              <td>28</td>
+              <td>980</td>
+              <td><div class="dt-bar"><div style="width:48%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🌊</span> Jinja</td>
+              <td><strong>420</strong></td>
+              <td>24</td>
+              <td>760</td>
+              <td><div class="dt-bar"><div style="width:38%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🏔️</span> Fort Portal</td>
+              <td><strong>380</strong></td>
+              <td>21</td>
+              <td>640</td>
+              <td><div class="dt-bar"><div style="width:32%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🌍</span> Arua</td>
+              <td><strong>340</strong></td>
+              <td>18</td>
+              <td>590</td>
+              <td><div class="dt-bar"><div style="width:28%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🌱</span> Soroti</td>
+              <td><strong>290</strong></td>
+              <td>16</td>
+              <td>480</td>
+              <td><div class="dt-bar"><div style="width:24%"></div></div></td>
+            </tr>
+            <tr>
+              <td><span class="dt-flag">🏞️</span> Kabale</td>
+              <td><strong>180</strong></td>
+              <td>13</td>
+              <td>350</td>
+              <td><div class="dt-bar"><div style="width:18%"></div></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="dt-sidebar">
+        <div class="dt-highlight">
+          <div class="dth-icon">🏆</div>
+          <h4>Top District</h4>
+          <strong>Kampala</strong>
+          <p>1,240 farmers · 88 schools · 3,400 households</p>
+          <div class="dth-badge">92% coverage</div>
+        </div>
+        <div class="dt-growth">
+          <h4>Fastest Growing</h4>
+          <div class="dtg-item"><span>🌾</span> Gulu<div class="dtg-bar"><div style="width:85%"></div></div><small>+42% YoY</small></div>
+          <div class="dtg-item"><span>⛰️</span> Mbale<div class="dtg-bar"><div style="width:68%"></div></div><small>+38% YoY</small></div>
+          <div class="dtg-item"><span>🌍</span> Arua<div class="dtg-bar"><div style="width:55%"></div></div><small>+31% YoY</small></div>
+        </div>
+        <div class="dt-next">
+          <h4>Expanding Soon</h4>
+          <div class="dtn-list">
+            <span>🏴 Lira</span><span>🏴 Masaka</span><span>🏴 Kasese</span><span>🏴 Tororo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOD IMPACT VISUAL ===== -->
+<section id="food-impact">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">🍽️ Food Saved</span>
+      <h2>Tonnes of Food Rescued<br/>from Waste</h2>
+      <p class="sec-sub">Every kilogram matched by our AI is a meal that would have been wasted. Here's the scale of what we've saved.</p>
+    </div>
+    <div class="food-counters">
+      <div class="fc-item">
+        <div class="fci-icon">🌽</div>
+        <div class="fci-val"><span class="counter" data-target="285">0</span><small>tonnes</small></div>
+        <p>Maize Saved</p>
+      </div>
+      <div class="fc-item">
+        <div class="fci-icon">🍅</div>
+        <div class="fci-val"><span class="counter" data-target="142">0</span><small>tonnes</small></div>
+        <p>Tomatoes Saved</p>
+      </div>
+      <div class="fc-item">
+        <div class="fci-icon">🥦</div>
+        <div class="fci-val"><span class="counter" data-target="98">0</span><small>tonnes</small></div>
+        <p>Vegetables Saved</p>
+      </div>
+      <div class="fc-item">
+        <div class="fci-icon">🫘</div>
+        <div class="fci-val"><span class="counter" data-target="176">0</span><small>tonnes</small></div>
+        <p>Beans &amp; Legumes</p>
+      </div>
+      <div class="fc-item">
+        <div class="fci-icon">🍠</div>
+        <div class="fci-val"><span class="counter" data-target="210">0</span><small>tonnes</small></div>
+        <p>Root Crops Saved</p>
+      </div>
+      <div class="fc-item fc-total">
+        <div class="fci-icon">🏆</div>
+        <div class="fci-val"><span class="counter" data-target="911">0</span><small>tonnes</small></div>
+        <p>Total Food Saved</p>
+      </div>
+    </div>
+    <!-- Equivalency bar -->
+    <div class="equiv-bar">
+      <div class="eb-item"><span>🍽️</span><strong>6.4 million</strong><small>meals provided</small></div>
+      <div class="eb-sep"></div>
+      <div class="eb-item"><span>👨‍👩‍👧‍👦</span><strong>23,000</strong><small>families fed for a month</small></div>
+      <div class="eb-sep"></div>
+      <div class="eb-item"><span>🌍</span><strong>911 tonnes</strong><small>CO₂ emissions avoided</small></div>
+      <div class="eb-sep"></div>
+      <div class="eb-item"><span>💰</span><strong>UGX 3.2B</strong><small>farmer revenue generated</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIES ===== -->
+<section id="stories" class="light-sec">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">💬 Real Stories</span>
+      <h2>Behind Every Number<br/>Is a Person</h2>
+      <p class="sec-sub">The impact isn't in spreadsheets — it's in communities, kitchens and children's futures.</p>
+    </div>
+    <div class="stories-grid">
+
+      <div class="story-card sc-featured">
+        <div class="sc-img-wrap">
+          <!-- PHOTO: <img src="assets/stories/john.jpg" alt="John Ssemakula" class="sc-photo"> -->
+          <div class="sc-ph farmer-bg"><span>👨‍🌾</span></div>
+          <div class="sc-badge farmer-badge">Farmer</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-quote-mark">"</div>
+          <blockquote>Before Farm2Plate, I would drive to Kampala hoping someone would buy my maize. Half the time I came back with unsold food that went to waste. Now I list on SMS and buyers come to me. My income has more than doubled.</blockquote>
+          <div class="sc-author">
+            <strong>John Ssemakula</strong>
+            <span>Maize farmer · Luwero District · 3 years on platform</span>
+          </div>
+          <div class="sc-stats">
+            <div><strong>+120%</strong><small>Income increase</small></div>
+            <div><strong>0kg</strong><small>Food wasted last season</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="sc-img-wrap">
+          <!-- PHOTO: <img src="assets/stories/grace.jpg" alt="Grace Aber" class="sc-photo"> -->
+          <div class="sc-ph household-bg"><span>👩‍👧</span></div>
+          <div class="sc-badge household-badge">Household</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-quote-mark">"</div>
+          <blockquote>My daughter was stunted at 18 months. The nutrition SMS tips taught me to add beans to her porridge. She is now growing normally. Farm2Plate changed my child's life.</blockquote>
+          <div class="sc-author">
+            <strong>Grace Aber</strong>
+            <span>Mother of 2 · Gulu District</span>
+          </div>
+          <div class="sc-stats">
+            <div><strong>+15%</strong><small>Child height gain (6 months)</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="sc-img-wrap">
+          <!-- PHOTO: <img src="assets/stories/headteacher.jpg" alt="Mr. Otieno" class="sc-photo"> -->
+          <div class="sc-ph school-bg"><span>👨‍🏫</span></div>
+          <div class="sc-badge school-badge">School</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-quote-mark">"</div>
+          <blockquote>Our school used to source food from a distant wholesaler. Now we order fresh produce directly from farmers 10km away. Food quality improved, costs dropped 30%, and attendance went up because children eat better.</blockquote>
+          <div class="sc-author">
+            <strong>Mr. Otieno</strong>
+            <span>Head Teacher · Gulu Primary School</span>
+          </div>
+          <div class="sc-stats">
+            <div><strong>−30%</strong><small>Food cost savings</small></div>
+            <div><strong>+18%</strong><small>Attendance increase</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="sc-img-wrap">
+          <!-- PHOTO: <img src="assets/stories/transporter.jpg" alt="Moses Okot" class="sc-photo"> -->
+          <div class="sc-ph transporter-bg"><span>🚛</span></div>
+          <div class="sc-badge transporter-badge">Transporter</div>
+        </div>
+        <div class="sc-body">
+          <div class="sc-quote-mark">"</div>
+          <blockquote>I used to wait by the roadside hoping farmers would hire me. Now Farm2Plate sends me 3–4 jobs every morning directly to my phone. I make twice as much and fuel costs are down because routes are optimised.</blockquote>
+          <div class="sc-author">
+            <strong>Moses Okot</strong>
+            <span>Truck driver · Wakiso District</span>
+          </div>
+          <div class="sc-stats">
+            <div><strong>×2</strong><small>Monthly income</small></div>
+            <div><strong>−35%</strong><small>Fuel costs</small></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Story slider dots -->
+    <div class="story-nav" id="story-nav">
+      <button class="sn-prev" onclick="scrollStories(-1)"><i class="fas fa-chevron-left"></i></button>
+      <div class="sn-dots">
+        <span class="sn-dot active"></span>
+        <span class="sn-dot"></span>
+        <span class="sn-dot"></span>
+        <span class="sn-dot"></span>
+      </div>
+      <button class="sn-next" onclick="scrollStories(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SDG PROGRESS ===== -->
+<section id="sdg-progress">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">🌍 SDG Contribution</span>
+      <h2>Our Progress Toward<br/>Global Goals</h2>
+    </div>
+    <div class="sdg-progress-grid">
+      <div class="spg-item">
+        <div class="spg-head">
+          <div class="spg-badge" style="background:#dda63a">SDG 2</div>
+          <span>🌾 Zero Hunger</span>
+        </div>
+        <div class="spg-bar-wrap">
+          <div class="spg-bar"><div class="spg-fill" data-w="68" style="width:0%"></div></div>
+          <span class="spg-pct">68%</span>
+        </div>
+        <p>of 2025 zero hunger targets achieved in active districts</p>
+      </div>
+      <div class="spg-item">
+        <div class="spg-head">
+          <div class="spg-badge" style="background:#4c9f38">SDG 3</div>
+          <span>💚 Good Health</span>
+        </div>
+        <div class="spg-bar-wrap">
+          <div class="spg-bar"><div class="spg-fill" data-w="54" style="width:0%"></div></div>
+          <span class="spg-pct">54%</span>
+        </div>
+        <p>child nutrition targets on track across 320 connected schools</p>
+      </div>
+      <div class="spg-item">
+        <div class="spg-head">
+          <div class="spg-badge" style="background:#a21942">SDG 8</div>
+          <span>💼 Decent Work</span>
+        </div>
+        <div class="spg-bar-wrap">
+          <div class="spg-bar"><div class="spg-fill" data-w="74" style="width:0%"></div></div>
+          <span class="spg-pct">74%</span>
+        </div>
+        <p>of target farmer income improvement achieved across all districts</p>
+      </div>
+      <div class="spg-item">
+        <div class="spg-head">
+          <div class="spg-badge" style="background:#bf8b2e">SDG 12</div>
+          <span>♻️ Responsible Use</span>
+        </div>
+        <div class="spg-bar-wrap">
+          <div class="spg-bar"><div class="spg-fill" data-w="82" style="width:0%"></div></div>
+          <span class="spg-pct">82%</span>
+        </div>
+        <p>reduction in food waste exceeding 2025 sustainable consumption targets</p>
+      </div>
+      <div class="spg-item">
+        <div class="spg-head">
+          <div class="spg-badge" style="background:#19486a">SDG 17</div>
+          <span>🤝 Partnerships</span>
+        </div>
+        <div class="spg-bar-wrap">
+          <div class="spg-bar"><div class="spg-fill" data-w="90" style="width:0%"></div></div>
+          <span class="spg-pct">90%</span>
+        </div>
+        <p>partnership target met with 6 major institutional partners and 3 private sector integrations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DONOR FEED ===== -->
+<section id="donor-feed" class="dark-sec">
+  <div class="container">
+    <div class="sec-head left">
+      <span class="chip chip-y">💛 Live Donations</span>
+      <h2>People Are Giving<br/>Right Now</h2>
+      <p>Every contribution goes directly into the food pool — matched to farmers and families in real time.</p>
+    </div>
+    <div class="donor-layout">
+      <div class="donor-stream" id="donor-stream">
+        <!-- Injected by JS -->
+      </div>
+      <div class="donor-totals">
+        <div class="dt-box">
+          <h4>Today's Donations</h4>
+          <div class="dt-big">UGX <span id="today-total">0</span></div>
+          <p>across <span id="today-count">0</span> donors</p>
+          <div class="dt-bar-wrap">
+            <div class="dt-progress" id="dt-progress" style="width:0%"></div>
+          </div>
+          <small>Daily target: UGX 5,000,000</small>
+        </div>
+        <div class="dt-box">
+          <h4>This Month</h4>
+          <div class="dt-big">UGX <span id="month-total">0</span></div>
+          <p>from <span id="month-count">0</span> supporters</p>
+        </div>
+        <div class="dt-box dt-cta-box">
+          <h4>Add Your Name</h4>
+          <p>Join the donors powering zero hunger in Uganda.</p>
+          <a href="getinvolved.html" class="btn-y-solid">Donate Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANNUAL REPORTS ===== -->
+<section id="reports">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📄 Transparency</span>
+      <h2>Annual Impact Reports</h2>
+      <p class="sec-sub">We publish full financial and impact reports every year. Nothing hidden.</p>
+    </div>
+    <div class="reports-row">
+      <div class="report-card">
+        <div class="rc-year">2024</div>
+        <div class="rc-icon"><i class="fas fa-file-pdf"></i></div>
+        <h4>Annual Impact Report 2024</h4>
+        <p>Full platform data, financial statements, and district-level outcomes. 48 pages.</p>
+        <a href="#" class="rc-download"><i class="fas fa-download"></i> Download PDF</a>
+      </div>
+      <div class="report-card">
+        <div class="rc-year">2023</div>
+        <div class="rc-icon"><i class="fas fa-file-pdf"></i></div>
+        <h4>Annual Impact Report 2023</h4>
+        <p>Year two growth, school feeding expansion, and financial sustainability review. 42 pages.</p>
+        <a href="#" class="rc-download"><i class="fas fa-download"></i> Download PDF</a>
+      </div>
+      <div class="report-card">
+        <div class="rc-year">2022</div>
+        <div class="rc-icon"><i class="fas fa-file-pdf"></i></div>
+        <h4>Launch Year Report 2022</h4>
+        <p>Platform launch, first 1,000 farmers, pilot outcomes and lessons learnt. 36 pages.</p>
+        <a href="#" class="rc-download"><i class="fas fa-download"></i> Download PDF</a>
+      </div>
+      <div class="report-card">
+        <div class="rc-year">2025</div>
+        <div class="rc-icon rc-upcoming"><i class="fas fa-clock"></i></div>
+        <h4>Mid-Year Report 2025</h4>
+        <p>Coming July 2025 — first report to include AI advisory module outcomes.</p>
+        <span class="rc-coming">Coming July 2025</span>
+      </div>
+    </div>
+    <div class="cert-row">
+      <div class="cert"><i class="fas fa-lock"></i> SSL Secured</div>
+      <div class="cert"><i class="fas fa-check-circle"></i> Verified NGO Uganda</div>
+      <div class="cert"><i class="fas fa-award"></i> Forbes Africa 30U30</div>
+      <div class="cert"><i class="fas fa-handshake"></i> WFP Certified Partner</div>
+      <div class="cert"><i class="fas fa-shield-alt"></i> GDPR Compliant</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="impact-cta" class="cta-sec">
+  <div class="container">
+    <div class="icta-inner">
+      <div class="icta-text">
+        <span class="chip chip-y">🚀 Be the Change</span>
+        <h2>Your Support Multiplies<br/>This Impact.</h2>
+        <p>Every UGX 10,000 donated buys 5kg of food for a family. Every farmer registered reduces food waste. Every school connected feeds 150 children.</p>
+        <div class="icta-btns">
+          <a href="getinvolved.html" class="btn-primary">Donate Now</a>
+          <a href="getinvolved.html" class="btn-ghost-w">Partner With Us</a>
+          <a href="contact.html" class="btn-ghost-w">Request Data</a>
+        </div>
+      </div>
+      <div class="icta-visual">
+        <div class="icta-ring">
+          <div class="icta-core">
+            <div class="icta-num"><span class="counter" data-target="18000">0</span>+</div>
+            <small>Lives Impacted</small>
+          </div>
+        </div>
+        <div class="icta-orbits">
+          <span class="orbit-item oi1">🌾</span>
+          <span class="orbit-item oi2">🏠</span>
+          <span class="orbit-item oi3">🏫</span>
+          <span class="orbit-item oi4">🚛</span>
+          <span class="orbit-item oi5">👶</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner container">
+    <div class="ft-brand">
+      <div class="ft-logo-text"><span>🌾</span> Farm<em>2</em>Plate</div>
+      <p>Connecting farms to families. Ending hunger with technology in Uganda and beyond.</p>
+      <div class="ft-soc">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Platform</h4><a href="howitworks.html">How It Works</a><a href="impact.html">Impact Dashboard</a><a href="getinvolved.html">Register</a><a href="blog.html">News &amp; Blog</a></div>
+    <div class="ft-col"><h4>Organisation</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="index.html#partners">Partners</a><a href="getinvolved.html">Get Involved</a></div>
+    <div class="ft-col"><h4>Legal &amp; Contact</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="#">Data Policy</a></div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 Farm 2 Plate Connect. All rights reserved.</p>
+    <p><i class="fas fa-lock"></i> SSL Secured · Verified Organisation</p>
+  </div>
+</footer>
+
+<!-- AI ASSISTANT -->
+<div id="ai-widget">
+  <button id="ai-fab" onclick="toggleAI()">
+    <i class="fas fa-robot"></i>
+    <div class="ai-ring"></div>
+  </button>
+  <div id="ai-panel">
+    <div class="ap-head">
+      <span>🤖</span>
+      <div><strong>FarmBot AI</strong><small>● Online</small></div>
+      <button onclick="toggleAI()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ap-msgs" id="ap-msgs">
+      <div class="ai-msg bot">📊 Ask me about our impact data, how to read the charts, or how to access our annual reports!</div>
+    </div>
+    <div class="ap-quick">
+      <button onclick="askAI('What is your biggest impact so far?')">Biggest impact?</button>
+      <button onclick="askAI('Which district has the most farmers?')">Top district?</button>
+      <button onclick="askAI('How do I donate?')">How to donate?</button>
+    </div>
+    <div class="ap-input">
+      <button id="mic-btn" onclick="startVoice()"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="ap-in" placeholder="Ask about our impact..." onkeypress="if(event.key==='Enter')sendAI()"/>
+      <button onclick="sendAI()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="voice-bar" class="v-bar hidden"><div class="v-dot"></div><span>Listening...</span></div>
+  </div>
+</div>
+
+<a href="https://wa.me/256700123456" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="donate-btn" onclick="window.location='getinvolved.html'">💛 Donate</button>
+
+<script src="impact.js"></script>
+</body>
+</html>

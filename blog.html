@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News &amp; Blog | Farm 2 Plate Connect — Stories, Insights &amp; Updates</title>
+  <meta name="description" content="Stories of impact, technology updates, farmer spotlights, research insights and news from Farm 2 Plate Connect Uganda."/>
+  <link rel="stylesheet" href="blog.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-leaf">🌾</span>
+      <span class="logo-text">Farm<em>2</em>Plate</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="howitworks.html">How It Works</a></li>
+      <li><a href="impact.html">Our Impact</a></li>
+      <li><a href="blog.html" class="nav-current">News &amp; Blog</a></li>
+      <li><a href="getinvolved.html">Get Involved</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-drop" id="lang-drop">
+        <button class="lang-trigger" id="lang-trigger">
+          <span id="lang-flag">🇬🇧</span>
+          <span id="lang-code">EN</span>
+          <i class="fas fa-chevron-down lang-arrow"></i>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-opt active" data-lang="en" data-flag="🇬🇧">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="lg" data-flag="🇺🇬">🇺🇬 Luganda</button>
+          <button class="lang-opt" data-lang="sw" data-flag="🌍">🌍 Kiswahili</button>
+        </div>
+      </div>
+      <button id="dark-btn" class="icon-btn" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <a href="getinvolved.html" class="nav-donate">Donate Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section id="blog-hero">
+  <div class="bh-bg">
+    <div class="bh-orb o1"></div>
+    <div class="bh-orb o2"></div>
+    <div class="bh-pattern"></div>
+  </div>
+  <div class="container bh-inner">
+    <div class="bh-breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>News &amp; Blog</span>
+    </div>
+    <span class="chip chip-outline">📰 Stories &amp; Insights</span>
+    <h1>From the Field.<br/><em>For the World.</em></h1>
+    <p class="bh-sub">Farmer stories, technology updates, nutrition research, policy insights, and impact reports — everything happening in Uganda's food security movement.</p>
+
+    <!-- Search bar -->
+    <div class="blog-search">
+      <div class="bs-wrap">
+        <i class="fas fa-search bs-icon"></i>
+        <input type="text" id="search-input" placeholder="Search articles, topics, or farmers..." onkeyup="filterArticles()"/>
+        <button class="bs-clear" id="bs-clear" onclick="clearSearch()"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED ARTICLE ===== -->
+<section id="featured">
+  <div class="container">
+    <div class="featured-card">
+      <div class="fc-img-wrap">
+        <!-- PHOTO: <img src="assets/blog/featured.jpg" alt="SMS doubles yields" class="fc-photo" loading="lazy"> -->
+        <div class="fc-ph feat-bg">
+          <span>🌾</span>
+          <div class="fc-ph-overlay">
+            <span class="fp-cat">🏆 Editor's Pick</span>
+          </div>
+        </div>
+        <!-- Replace with real photo — recommended size: 800×500px -->
+        <!-- <img src="assets/blog/sms-yields.jpg" alt="Farmer using SMS advisory" class="fc-photo"> -->
+      </div>
+      <div class="fc-body">
+        <div class="fc-meta">
+          <span class="cat-badge impact">Impact</span>
+          <span class="fc-date"><i class="far fa-calendar"></i> March 28, 2025</span>
+          <span class="fc-read"><i class="far fa-clock"></i> 6 min read</span>
+        </div>
+        <h2 class="fc-title">How SMS Farming Advice Doubled Crop Yields Across Luwero District</h2>
+        <p class="fc-excerpt">When John Ssemakula began receiving early-morning SMS advisories about weather patterns and pest alerts, he was sceptical. A year later, his maize yield had doubled and his income tripled. We visited Luwero to understand how a simple text message is transforming agriculture in Uganda.</p>
+        <div class="fc-author-row">
+          <!-- AUTHOR PHOTO: <img src="assets/team/amara.jpg" class="fa-avatar"> -->
+          <div class="fa-avatar-ph">AN</div>
+          <div>
+            <strong>Amara Nakato</strong>
+            <span>CEO &amp; Co-Founder · Farm 2 Plate Connect</span>
+          </div>
+          <a href="#" class="fc-read-btn">Read Full Story <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORY FILTERS ===== -->
+<div class="cat-filter-bar container">
+  <button class="cf-btn active" data-cat="all">All Posts</button>
+  <button class="cf-btn" data-cat="impact">Impact Stories</button>
+  <button class="cf-btn" data-cat="technology">Technology</button>
+  <button class="cf-btn" data-cat="nutrition">Nutrition &amp; Health</button>
+  <button class="cf-btn" data-cat="farmers">Farmer Spotlights</button>
+  <button class="cf-btn" data-cat="partnership">Partnerships</button>
+  <button class="cf-btn" data-cat="research">Research</button>
+  <button class="cf-btn" data-cat="policy">Policy</button>
+</div>
+
+<!-- ===== ARTICLES GRID + SIDEBAR ===== -->
+<section id="articles">
+  <div class="container articles-layout">
+
+    <!-- MAIN ARTICLES GRID -->
+    <div class="articles-main">
+
+      <!-- Results count -->
+      <div class="results-bar">
+        <span id="results-count">Showing all 12 articles</span>
+        <div class="sort-wrap">
+          <label>Sort:</label>
+          <select id="sort-select" onchange="sortArticles()">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="popular">Most Popular</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Article Cards -->
+      <div class="articles-grid" id="articles-grid">
+
+        <article class="art-card" data-cat="technology" data-date="2025-03-14" data-views="4820">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/ai-routes.jpg" alt="AI Route Optimisation" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#1a3b5c"><span>🚛</span></div>
+            <span class="art-cat-badge tech-badge">Technology</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> March 14, 2025</span>
+              <span><i class="far fa-eye"></i> 4,820</span>
+              <span><i class="far fa-clock"></i> 5 min</span>
+            </div>
+            <h3>AI Route Optimisation Cuts Delivery Costs by 35% for Uganda Farmers</h3>
+            <p>Our Python-powered routing algorithm analyses 680 active transporters and thousands of routes daily, saving farmers an average of UGX 85,000 per delivery.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">DS</div>
+                <span>David Ssemwogerere</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="partnership" data-date="2025-02-20" data-views="3610">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/schools.jpg" alt="School Feeding" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#3b1a5c"><span>🏫</span></div>
+            <span class="art-cat-badge partner-badge">Partnership</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Feb 20, 2025</span>
+              <span><i class="far fa-eye"></i> 3,610</span>
+              <span><i class="far fa-clock"></i> 4 min</span>
+            </div>
+            <h3>200 Schools Now Sourcing Meals Directly from Local Farmers — and Growing</h3>
+            <p>What began as a pilot with 12 schools in Kampala has expanded to 200 schools across 8 districts. WFP Uganda subsidises 100% of meals in food-insecure areas.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">SN</div>
+                <span>Sarah Namukasa</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="nutrition" data-date="2025-02-05" data-views="5940">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/nutrition.jpg" alt="Child Nutrition" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#1a5c3b"><span>🥗</span></div>
+            <span class="art-cat-badge nutrition-badge">Nutrition</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Feb 5, 2025</span>
+              <span><i class="far fa-eye"></i> 5,940</span>
+              <span><i class="far fa-clock"></i> 7 min</span>
+            </div>
+            <h3>Child Stunting in Gulu Drops 18% After Six Months of AI Nutrition SMS Programme</h3>
+            <p>A longitudinal study across 1,200 households in Gulu District shows significant improvement in child growth metrics after consistent weekly nutrition messaging.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">GA</div>
+                <span>Grace Achieng</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="farmers" data-date="2025-01-22" data-views="6720">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/rose.jpg" alt="Rose Kyomugisha" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#5c3b1a"><span>👩‍🌾</span></div>
+            <span class="art-cat-badge farmer-badge">Farmer Spotlight</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Jan 22, 2025</span>
+              <span><i class="far fa-eye"></i> 6,720</span>
+              <span><i class="far fa-clock"></i> 5 min</span>
+            </div>
+            <h3>From Middlemen to Direct Sales: How Rose Tripled Her Carrot Income in Kabale</h3>
+            <p>Rose Kyomugisha spent 10 years selling through brokers who took 40% of her earnings. After joining Farm2Plate, she now sells direct and has expanded to 3 acres.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">AN</div>
+                <span>Amara Nakato</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="research" data-date="2025-01-10" data-views="3120">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/research.jpg" alt="Food Waste Research" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#1a4d3b"><span>🔬</span></div>
+            <span class="art-cat-badge research-badge">Research</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Jan 10, 2025</span>
+              <span><i class="far fa-eye"></i> 3,120</span>
+              <span><i class="far fa-clock"></i> 8 min</span>
+            </div>
+            <h3>Post-Harvest Food Loss in Uganda: A Data-Driven Analysis and Our Intervention Model</h3>
+            <p>New research from Makerere University quantifies post-harvest losses at 40% — and demonstrates how digital surplus matching reduces waste in the first 24 hours.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">MO</div>
+                <span>Moses Okello</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="policy" data-date="2024-12-18" data-views="2890">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/policy.jpg" alt="Uganda Policy" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#3b2a1a"><span>🏛️</span></div>
+            <span class="art-cat-badge policy-badge">Policy</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Dec 18, 2024</span>
+              <span><i class="far fa-eye"></i> 2,890</span>
+              <span><i class="far fa-clock"></i> 6 min</span>
+            </div>
+            <h3>Uganda's National Food Security Plan 2025–2030: Where Farm2Plate Fits In</h3>
+            <p>The Ministry of Agriculture's new strategic plan aligns closely with our platform model. We break down what this means for farmers and how we'll collaborate on national targets.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">SN</div>
+                <span>Sarah Namukasa</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="impact" data-date="2024-12-05" data-views="7340">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/year-review.jpg" alt="Year in Review" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#1A3B32"><span>📊</span></div>
+            <span class="art-cat-badge impact-badge">Impact</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Dec 5, 2024</span>
+              <span><i class="far fa-eye"></i> 7,340</span>
+              <span><i class="far fa-clock"></i> 10 min</span>
+            </div>
+            <h3>2024 Year in Review: 5,800 Farmers, 12,000 Households, and 911 Tonnes of Food Saved</h3>
+            <p>Our most comprehensive year yet. We recap the data, the stories, the setbacks we overcame, and the bold plans we have for taking the platform to every district in Uganda.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">AN</div>
+                <span>Amara Nakato</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="technology" data-date="2024-11-20" data-views="4110">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/momo.jpg" alt="Mobile Money" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#FFD729; color:#1A3B32"><span>💳</span></div>
+            <span class="art-cat-badge tech-badge">Technology</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Nov 20, 2024</span>
+              <span><i class="far fa-eye"></i> 4,110</span>
+              <span><i class="far fa-clock"></i> 5 min</span>
+            </div>
+            <h3>Inside Our MTN MoMo Integration: How Farmers Get Paid in Under 60 Seconds</h3>
+            <p>A deep dive into the Python code, API calls, and edge cases behind our mobile money system — and why instant settlement changes everything for smallholder farmers.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">DS</div>
+                <span>David Ssemwogerere</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="farmers" data-date="2024-11-05" data-views="5280">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/moses-okot.jpg" alt="Moses Okot" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#5c4a1a"><span>🚛</span></div>
+            <span class="art-cat-badge farmer-badge">Farmer Spotlight</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Nov 5, 2024</span>
+              <span><i class="far fa-eye"></i> 5,280</span>
+              <span><i class="far fa-clock"></i> 4 min</span>
+            </div>
+            <h3>Moses the Transporter: From Roadside Waiting to 4 Jobs a Day via SMS</h3>
+            <p>Moses Okot used to wait hours at roadside hoping farmers would hire him. Now Farm2Plate sends him job alerts before sunrise. His monthly income has doubled.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">MO</div>
+                <span>Moses Okello</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="partnership" data-date="2024-10-14" data-views="3480">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/wfp.jpg" alt="WFP Partnership" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#004a8d"><span>🤝</span></div>
+            <span class="art-cat-badge partner-badge">Partnership</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Oct 14, 2024</span>
+              <span><i class="far fa-eye"></i> 3,480</span>
+              <span><i class="far fa-clock"></i> 4 min</span>
+            </div>
+            <h3>WFP Uganda Signs Multi-Year Partnership to Scale School Feeding via Farm2Plate</h3>
+            <p>A landmark agreement with the World Food Programme will bring Farm2Plate's direct-from-farmer sourcing model to an additional 150 schools across Northern Uganda.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">SN</div>
+                <span>Sarah Namukasa</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="nutrition" data-date="2024-09-28" data-views="4660">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/pregnancy.jpg" alt="Pregnancy Nutrition" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#3b1a4d"><span>🤰</span></div>
+            <span class="art-cat-badge nutrition-badge">Nutrition</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Sep 28, 2024</span>
+              <span><i class="far fa-eye"></i> 4,660</span>
+              <span><i class="far fa-clock"></i> 6 min</span>
+            </div>
+            <h3>The Pregnancy Nutrition Gap in Uganda — and How Weekly SMS Tips Are Closing It</h3>
+            <p>Iron deficiency affects 45% of pregnant women in Uganda. Our targeted SMS programme delivers evidence-based dietary guidance in three languages to expecting mothers.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">GA</div>
+                <span>Grace Achieng</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="art-card" data-cat="research" data-date="2024-09-05" data-views="2740">
+          <div class="art-img-wrap">
+            <!-- PHOTO: <img src="assets/blog/climate.jpg" alt="Climate & Farming" loading="lazy" class="art-img"> -->
+            <div class="art-ph" style="--pc:#1a3d5c"><span>🌦️</span></div>
+            <span class="art-cat-badge research-badge">Research</span>
+          </div>
+          <div class="art-body">
+            <div class="art-meta">
+              <span><i class="far fa-calendar"></i> Sep 5, 2024</span>
+              <span><i class="far fa-eye"></i> 2,740</span>
+              <span><i class="far fa-clock"></i> 7 min</span>
+            </div>
+            <h3>Climate Change and Uganda's Smallholder Farmers: How SMS Weather Alerts Are Saving Harvests</h3>
+            <p>With rainfall patterns becoming increasingly unpredictable, our 7-day district-level SMS weather forecasting system is giving farmers the lead time they need to protect crops.</p>
+            <div class="art-footer">
+              <div class="art-author">
+                <div class="aa-ph">DS</div>
+                <span>David Ssemwogerere</span>
+              </div>
+              <a href="#" class="art-link">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- end articles-grid -->
+
+      <!-- No results message -->
+      <div id="no-results" class="no-results hidden">
+        <span>🔍</span>
+        <h3>No articles found</h3>
+        <p>Try a different search term or category filter.</p>
+        <button onclick="clearSearch(); filterArticles('all')" class="btn-outline-g">Show All Articles</button>
+      </div>
+
+      <!-- Load More -->
+      <div class="load-more-wrap">
+        <button class="load-more-btn" id="load-more" onclick="loadMore()">
+          <i class="fas fa-plus"></i> Load More Articles
+        </button>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+
+      <!-- Newsletter -->
+      <div class="sb-card newsletter-card">
+        <div class="nc-icon">📬</div>
+        <h4>Weekly Digest</h4>
+        <p>Get the latest stories and platform updates delivered to your inbox every Tuesday.</p>
+        <form class="nc-form" onsubmit="subscribeNewsletter(event)">
+          <input type="email" placeholder="Your email address" required/>
+          <button type="submit" class="btn-primary-sm">Subscribe</button>
+        </form>
+        <small>No spam. Unsubscribe anytime. 4,200+ subscribers.</small>
+      </div>
+
+      <!-- Trending -->
+      <div class="sb-card">
+        <h4 class="sb-title"><i class="fas fa-fire"></i> Trending This Week</h4>
+        <div class="trending-list">
+          <div class="tl-item">
+            <span class="tl-num">01</span>
+            <div>
+              <a href="#">2024 Year in Review: 5,800 Farmers &amp; 911 Tonnes Saved</a>
+              <small><i class="far fa-eye"></i> 7,340 views</small>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-num">02</span>
+            <div>
+              <a href="#">Rose Tripled Her Carrot Income in Kabale</a>
+              <small><i class="far fa-eye"></i> 6,720 views</small>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-num">03</span>
+            <div>
+              <a href="#">Child Stunting in Gulu Drops 18% After SMS Nutrition</a>
+              <small><i class="far fa-eye"></i> 5,940 views</small>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-num">04</span>
+            <div>
+              <a href="#">Moses: From Roadside Waiting to 4 Jobs a Day</a>
+              <small><i class="far fa-eye"></i> 5,280 views</small>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-num">05</span>
+            <div>
+              <a href="#">AI Route Optimisation Cuts Delivery Costs 35%</a>
+              <small><i class="far fa-eye"></i> 4,820 views</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="sb-card">
+        <h4 class="sb-title"><i class="fas fa-tags"></i> Browse by Category</h4>
+        <div class="cat-list">
+          <button class="cl-item" onclick="quickFilter('impact')"><span>Impact Stories</span><span class="cl-count">3</span></button>
+          <button class="cl-item" onclick="quickFilter('technology')"><span>Technology</span><span class="cl-count">3</span></button>
+          <button class="cl-item" onclick="quickFilter('nutrition')"><span>Nutrition &amp; Health</span><span class="cl-count">2</span></button>
+          <button class="cl-item" onclick="quickFilter('farmers')"><span>Farmer Spotlights</span><span class="cl-count">2</span></button>
+          <button class="cl-item" onclick="quickFilter('partnership')"><span>Partnerships</span><span class="cl-count">2</span></button>
+          <button class="cl-item" onclick="quickFilter('research')"><span>Research</span><span class="cl-count">2</span></button>
+          <button class="cl-item" onclick="quickFilter('policy')"><span>Policy</span><span class="cl-count">1</span></button>
+        </div>
+      </div>
+
+      <!-- Tags cloud -->
+      <div class="sb-card">
+        <h4 class="sb-title"><i class="fas fa-hashtag"></i> Popular Tags</h4>
+        <div class="tags-cloud">
+          <button onclick="searchTag('SMS Advisory')">SMS Advisory</button>
+          <button onclick="searchTag('Food Waste')">Food Waste</button>
+          <button onclick="searchTag('Child Nutrition')">Child Nutrition</button>
+          <button onclick="searchTag('Mobile Money')">Mobile Money</button>
+          <button onclick="searchTag('School Feeding')">School Feeding</button>
+          <button onclick="searchTag('Uganda Farmers')">Uganda Farmers</button>
+          <button onclick="searchTag('AI')">AI &amp; Machine Learning</button>
+          <button onclick="searchTag('WFP')">WFP Partnership</button>
+          <button onclick="searchTag('MTN MoMo')">MTN MoMo</button>
+          <button onclick="searchTag('Stunting')">Stunting Prevention</button>
+          <button onclick="searchTag('Python')">Python</button>
+          <button onclick="searchTag('Logistics')">Logistics</button>
+        </div>
+      </div>
+
+      <!-- Social Share -->
+      <div class="sb-card share-card">
+        <h4 class="sb-title"><i class="fas fa-share-alt"></i> Follow Our Story</h4>
+        <div class="share-btns">
+          <a href="#" class="sh-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="sh-btn twitter"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="sh-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="#" class="sh-btn instagram"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+
+      <!-- CTA card -->
+      <div class="sb-card cta-sb-card">
+        <div class="cta-sb-top">
+          <span>🌾</span>
+          <h4>Become Part of the Story</h4>
+        </div>
+        <p>Register as a farmer, donate food, or partner with us to help end hunger in Uganda.</p>
+        <a href="getinvolved.html" class="btn-primary-sm full-w">Get Involved</a>
+      </div>
+
+    </aside>
+  </div><!-- end articles-layout -->
+</section>
+
+<!-- ===== NEWSLETTER FULL SECTION ===== -->
+<section id="newsletter" class="dark-sec">
+  <div class="container">
+    <div class="nl-inner">
+      <div class="nl-left">
+        <span class="chip chip-y">📬 Stay Informed</span>
+        <h2>Get Stories That Matter<br/>Every Week</h2>
+        <p>Join 4,200+ readers getting farmer stories, nutrition research, platform updates, and Uganda food security news — every Tuesday morning.</p>
+        <div class="nl-features">
+          <div class="nlf"><i class="fas fa-check-circle"></i> Weekly farmer stories</div>
+          <div class="nlf"><i class="fas fa-check-circle"></i> Platform impact data</div>
+          <div class="nlf"><i class="fas fa-check-circle"></i> Research summaries</div>
+          <div class="nlf"><i class="fas fa-check-circle"></i> No spam, unsubscribe anytime</div>
+        </div>
+      </div>
+      <div class="nl-right">
+        <form class="nl-form" onsubmit="subscribeNewsletter(event)">
+          <div class="nlf-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="e.g. Grace Namukasa" required/>
+          </div>
+          <div class="nlf-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@example.com" required/>
+          </div>
+          <div class="nlf-group">
+            <label>I am a...</label>
+            <select>
+              <option>Farmer</option>
+              <option>NGO / Donor</option>
+              <option>Researcher</option>
+              <option>Journalist</option>
+              <option>Government Official</option>
+              <option>General Reader</option>
+            </select>
+          </div>
+          <div class="nlf-check">
+            <input type="checkbox" id="nl-consent" required/>
+            <label for="nl-consent">I agree to receive the weekly Farm 2 Plate newsletter. I can unsubscribe anytime.</label>
+          </div>
+          <button type="submit" class="btn-primary full-w">Subscribe to Weekly Digest <i class="fas fa-paper-plane"></i></button>
+        </form>
+        <div id="nl-success" class="nl-success hidden">
+          <i class="fas fa-check-circle"></i>
+          <strong>You're subscribed!</strong>
+          <p>Your first digest arrives next Tuesday. Welcome to the Farm2Plate community. 🌾</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner container">
+    <div class="ft-brand">
+      <div class="ft-logo-text"><span>🌾</span> Farm<em>2</em>Plate</div>
+      <p>Connecting farms to families. Ending hunger with technology in Uganda and beyond.</p>
+      <div class="ft-soc">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Platform</h4><a href="howitworks.html">How It Works</a><a href="impact.html">Impact Dashboard</a><a href="getinvolved.html">Register</a><a href="blog.html">News &amp; Blog</a></div>
+    <div class="ft-col"><h4>Organisation</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="index.html#partners">Partners</a><a href="getinvolved.html">Get Involved</a></div>
+    <div class="ft-col"><h4>Legal &amp; Contact</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="#">Data Policy</a></div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 Farm 2 Plate Connect. All rights reserved.</p>
+    <p><i class="fas fa-lock"></i> SSL Secured · Verified Organisation</p>
+  </div>
+</footer>
+
+<!-- AI ASSISTANT -->
+<div id="ai-widget">
+  <button id="ai-fab" onclick="toggleAI()">
+    <i class="fas fa-robot"></i>
+    <div class="ai-ring"></div>
+  </button>
+  <div id="ai-panel">
+    <div class="ap-head">
+      <span>🤖</span>
+      <div><strong>FarmBot AI</strong><small>● Online</small></div>
+      <button onclick="toggleAI()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ap-msgs" id="ap-msgs">
+      <div class="ai-msg bot">📰 Ask me to find articles, explain topics, or summarise any of our stories!</div>
+    </div>
+    <div class="ap-quick">
+      <button onclick="askAI('What is your most popular article?')">Top article?</button>
+      <button onclick="askAI('Tell me about farmer spotlight stories')">Farmer stories?</button>
+      <button onclick="askAI('Any research on child nutrition?')">Nutrition research?</button>
+    </div>
+    <div class="ap-input">
+      <button id="mic-btn" onclick="startVoice()"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="ap-in" placeholder="Ask about our stories..." onkeypress="if(event.key==='Enter')sendAI()"/>
+      <button onclick="sendAI()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="voice-bar" class="v-bar hidden"><div class="v-dot"></div><span>Listening...</span></div>
+  </div>
+</div>
+
+<a href="https://wa.me/256700123456" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="donate-btn" onclick="window.location='getinvolved.html'">💛 Donate</button>
+
+<script src="blog.js"></script>
+</body>
+</html>
