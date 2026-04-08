@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Involved | Farm 2 Plate Connect — Register, Donate &amp; Partner</title>
+  <meta name="description" content="Register as a farmer, donate food, partner with us, or volunteer — join the movement to end food insecurity in Uganda."/>
+  <link rel="stylesheet" href="getinvolved.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-leaf">🌾</span>
+      <span class="logo-text">Farm<em>2</em>Plate</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="howitworks.html">How It Works</a></li>
+      <li><a href="impact.html">Our Impact</a></li>
+      <li><a href="blog.html">News &amp; Blog</a></li>
+      <li><a href="getinvolved.html" class="nav-current">Get Involved</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-drop" id="lang-drop">
+        <button class="lang-trigger" id="lang-trigger">
+          <span id="lang-flag">🇬🇧</span>
+          <span id="lang-code">EN</span>
+          <i class="fas fa-chevron-down lang-arrow"></i>
+        </button>
+        <div class="lang-menu" id="lang-menu">
+          <button class="lang-opt active" data-lang="en" data-flag="🇬🇧">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="lg" data-flag="🇺🇬">🇺🇬 Luganda</button>
+          <button class="lang-opt" data-lang="sw" data-flag="🌍">🌍 Kiswahili</button>
+        </div>
+      </div>
+      <button id="dark-btn" class="icon-btn" title="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="nav-donate" onclick="jumpTo('donate')">Donate Now</button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="gi-hero">
+  <div class="gih-bg">
+    <div class="gih-orb o1"></div>
+    <div class="gih-orb o2"></div>
+    <div class="gih-pattern"></div>
+  </div>
+  <div class="container gih-inner">
+    <div class="gih-breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Get Involved</span>
+    </div>
+    <span class="chip chip-outline">💛 Take Action Today</span>
+    <h1>Every Action<br/><em>Ends Hunger.</em></h1>
+    <p class="gih-sub">Whether you farm, donate, transport, teach or lead — there is a place for you in ending food insecurity in Uganda. Choose your role and join 18,000+ people already making a difference.</p>
+
+    <!-- Role selector cards -->
+    <div class="role-cards">
+      <button class="role-card active" data-role="farmer" onclick="switchRole('farmer')">
+        <span>👨‍🌾</span>
+        <strong>I'm a Farmer</strong>
+        <small>Sell direct, earn more</small>
+      </button>
+      <button class="role-card" data-role="household" onclick="switchRole('household')">
+        <span>🏠</span>
+        <strong>I'm a Household</strong>
+        <small>Request food support</small>
+      </button>
+      <button class="role-card" data-role="school" onclick="switchRole('school')">
+        <span>🏫</span>
+        <strong>I'm a School</strong>
+        <small>Join school feeding</small>
+      </button>
+      <button class="role-card" data-role="ngo" onclick="switchRole('ngo')">
+        <span>🤝</span>
+        <strong>I'm an NGO/Donor</strong>
+        <small>Partner or donate</small>
+      </button>
+      <button class="role-card" data-role="transporter" onclick="switchRole('transporter')">
+        <span>🚛</span>
+        <strong>I'm a Transporter</strong>
+        <small>Get delivery jobs</small>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REGISTRATION FORMS (tab-based) ===== -->
+<section id="register">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📋 Register</span>
+      <h2>Join the Platform — It's Free</h2>
+      <p class="sec-sub">All registrations are free. You'll receive an SMS confirmation within minutes.</p>
+    </div>
+
+    <!-- Tab nav mirrors role cards -->
+    <div class="reg-tabs" id="reg-tabs">
+      <button class="rt-btn active" data-tab="farmer" onclick="switchRole('farmer')"><span>👨‍🌾</span> Farmer</button>
+      <button class="rt-btn" data-tab="household" onclick="switchRole('household')"><span>🏠</span> Household</button>
+      <button class="rt-btn" data-tab="school" onclick="switchRole('school')"><span>🏫</span> School</button>
+      <button class="rt-btn" data-tab="ngo" onclick="switchRole('ngo')"><span>🤝</span> NGO / Donor</button>
+      <button class="rt-btn" data-tab="transporter" onclick="switchRole('transporter')"><span>🚛</span> Transporter</button>
+    </div>
+
+    <div class="reg-panels">
+
+      <!-- FARMER FORM -->
+      <div class="reg-panel active" id="panel-farmer">
+        <div class="rp-grid">
+          <div class="rp-info">
+            <div class="rpi-icon">👨‍🌾</div>
+            <h3>Register as a Farmer</h3>
+            <p>Join 5,800+ farmers already earning more, wasting less, and growing stronger with Farm 2 Plate Connect.</p>
+            <div class="rpi-benefits">
+              <div class="rpib"><i class="fas fa-check-circle"></i> Daily SMS weather &amp; market prices</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> List produce directly to buyers</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Get paid instantly via MTN MoMo</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Access microloans &amp; savings</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> AI planting &amp; pest advisories</div>
+            </div>
+            <div class="rpi-sms-preview">
+              <div class="rsp-head">📲 Your first SMS will look like this:</div>
+              <div class="rsp-bubble">🌾 Welcome, John! You're now connected to Farm2Plate. Expect daily advisories at 6am. Market price today: Maize UGX 2,400/kg. Reply HELP for commands.</div>
+            </div>
+          </div>
+          <form class="rp-form" id="form-farmer" onsubmit="submitForm(event,'farmer')">
+            <div class="form-row">
+              <div class="fg"><label>Full Name *</label><input type="text" placeholder="e.g. John Ssemakula" required/></div>
+              <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="e.g. 0771234567" required/></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>District *</label>
+                <select required>
+                  <option value="">Select district</option>
+                  <option>Kampala</option><option>Wakiso</option><option>Gulu</option><option>Mbale</option>
+                  <option>Mbarara</option><option>Jinja</option><option>Fort Portal</option>
+                  <option>Arua</option><option>Soroti</option><option>Kabale</option><option>Luwero</option>
+                  <option>Mukono</option><option>Masaka</option><option>Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>Sub-county / Village</label><input type="text" placeholder="e.g. Kamira, Luwero"/></div>
+            </div>
+            <div class="fg"><label>Primary Crops *</label>
+              <div class="checkbox-grid">
+                <label class="cb-item"><input type="checkbox" value="maize"/>🌽 Maize</label>
+                <label class="cb-item"><input type="checkbox" value="beans"/>🫘 Beans</label>
+                <label class="cb-item"><input type="checkbox" value="tomatoes"/>🍅 Tomatoes</label>
+                <label class="cb-item"><input type="checkbox" value="vegetables"/>🥦 Vegetables</label>
+                <label class="cb-item"><input type="checkbox" value="cassava"/>🍠 Cassava</label>
+                <label class="cb-item"><input type="checkbox" value="bananas"/>🍌 Bananas</label>
+                <label class="cb-item"><input type="checkbox" value="groundnuts"/>🥜 Groundnuts</label>
+                <label class="cb-item"><input type="checkbox" value="other"/>➕ Other</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Farm Size (acres)</label>
+                <select>
+                  <option>Less than 1 acre</option><option>1–3 acres</option>
+                  <option>3–5 acres</option><option>5–10 acres</option><option>10+ acres</option>
+                </select>
+              </div>
+              <div class="fg"><label>Mobile Money</label>
+                <select>
+                  <option>MTN Mobile Money</option><option>Airtel Money</option><option>Both</option><option>None yet</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Email (optional)</label><input type="email" placeholder="For web platform access"/></div>
+            <div class="form-consent">
+              <input type="checkbox" id="fc-farmer" required/>
+              <label for="fc-farmer">I agree to the Farm 2 Plate <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>. I consent to receive SMS advisories.</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fas fa-seedling"></i> Register as Farmer — Free
+            </button>
+            <p class="form-note"><i class="fas fa-lock"></i> Your data is secure. We never sell your information.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- HOUSEHOLD FORM -->
+      <div class="reg-panel" id="panel-household">
+        <div class="rp-grid">
+          <div class="rp-info">
+            <div class="rpi-icon">🏠</div>
+            <h3>Request Food Support</h3>
+            <p>If your household is experiencing food insecurity, register to access affordable food, donation matching, and weekly nutrition guidance.</p>
+            <div class="rpi-benefits">
+              <div class="rpib"><i class="fas fa-check-circle"></i> Access to affordable local produce</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Donation food matching for vulnerable families</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Weekly nutrition SMS tips</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Child nutrition programme access</div>
+            </div>
+          </div>
+          <form class="rp-form" id="form-household" onsubmit="submitForm(event,'household')">
+            <div class="form-row">
+              <div class="fg"><label>Head of Household *</label><input type="text" placeholder="Full name" required/></div>
+              <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="e.g. 0771234567" required/></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>District *</label>
+                <select required>
+                  <option value="">Select district</option>
+                  <option>Kampala</option><option>Wakiso</option><option>Gulu</option><option>Mbale</option>
+                  <option>Mbarara</option><option>Jinja</option><option>Fort Portal</option>
+                  <option>Arua</option><option>Soroti</option><option>Kabale</option><option>Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>Household Size *</label>
+                <select required>
+                  <option>1–2 people</option><option>3–5 people</option>
+                  <option>6–9 people</option><option>10+ people</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Children under 5 in household</label>
+              <select>
+                <option>None</option><option>1</option><option>2</option><option>3</option><option>4+</option>
+              </select>
+            </div>
+            <div class="fg"><label>Pregnant or breastfeeding women in household</label>
+              <select><option>None</option><option>1</option><option>2+</option></select>
+            </div>
+            <div class="fg"><label>Primary food need</label>
+              <select>
+                <option>Affordable food access</option>
+                <option>Emergency food support</option>
+                <option>Nutrition guidance</option>
+                <option>All of the above</option>
+              </select>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="fc-household" required/>
+              <label for="fc-household">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and consent to receive nutrition SMS guidance.</label>
+            </div>
+            <button type="submit" class="btn-submit btn-submit-blue">
+              <i class="fas fa-home"></i> Register Household — Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SCHOOL FORM -->
+      <div class="reg-panel" id="panel-school">
+        <div class="rp-grid">
+          <div class="rp-info">
+            <div class="rpi-icon">🏫</div>
+            <h3>Connect Your School</h3>
+            <p>Join 320+ schools sourcing fresh food directly from local farmers — improving student nutrition and cutting meal costs by up to 30%.</p>
+            <div class="rpi-benefits">
+              <div class="rpib"><i class="fas fa-check-circle"></i> Fresh food direct from local farmers</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Up to 30% cost reduction</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> WFP/UNICEF subsidy eligibility</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Monthly nutrition dashboards</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Automated weekly ordering</div>
+            </div>
+          </div>
+          <form class="rp-form" id="form-school" onsubmit="submitForm(event,'school')">
+            <div class="fg"><label>School Name *</label><input type="text" placeholder="e.g. St. Mary's Primary School" required/></div>
+            <div class="form-row">
+              <div class="fg"><label>District *</label>
+                <select required>
+                  <option value="">Select district</option>
+                  <option>Kampala</option><option>Wakiso</option><option>Gulu</option><option>Mbale</option>
+                  <option>Mbarara</option><option>Jinja</option><option>Fort Portal</option><option>Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>School Type</label>
+                <select>
+                  <option>Government Primary</option><option>Private Primary</option>
+                  <option>Government Secondary</option><option>Private Secondary</option><option>Nursery</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Number of Students *</label>
+                <select required>
+                  <option>Under 100</option><option>100–300</option>
+                  <option>300–600</option><option>600–1000</option><option>1000+</option>
+                </select>
+              </div>
+              <div class="fg"><label>Current feeding status</label>
+                <select>
+                  <option>No feeding programme</option>
+                  <option>Existing programme — want to improve</option>
+                  <option>Partial feeding</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Head Teacher / Contact Name *</label><input type="text" placeholder="Full name" required/></div>
+              <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="e.g. 0771234567" required/></div>
+            </div>
+            <div class="fg"><label>Email Address *</label><input type="email" placeholder="school@example.com" required/></div>
+            <div class="form-consent">
+              <input type="checkbox" id="fc-school" required/>
+              <label for="fc-school">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and authorise Farm 2 Plate to connect our school with verified local farmers.</label>
+            </div>
+            <button type="submit" class="btn-submit btn-submit-purple">
+              <i class="fas fa-school"></i> Register School — Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- NGO / DONOR FORM -->
+      <div class="reg-panel" id="panel-ngo">
+        <div class="rp-grid">
+          <div class="rp-info">
+            <div class="rpi-icon">🤝</div>
+            <h3>Partner or Donate</h3>
+            <p>NGOs, foundations, corporations and individual donors — your contribution goes directly into the food pool and is matched to verified farmers and families in real time.</p>
+            <div class="rpi-benefits">
+              <div class="rpib"><i class="fas fa-check-circle"></i> 100% transparent donation tracking</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Real-time impact dashboard access</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Monthly impact reports</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Co-branding &amp; visibility options</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Custom programme design</div>
+            </div>
+            <div class="partner-logos-mini">
+              <span>🌾 FAO</span><span>🦄 UNICEF</span><span>🍽️ WFP</span><span>📡 MTN</span>
+            </div>
+          </div>
+          <form class="rp-form" id="form-ngo" onsubmit="submitForm(event,'ngo')">
+            <div class="form-row">
+              <div class="fg"><label>Organisation Name *</label><input type="text" placeholder="e.g. FAO Uganda" required/></div>
+              <div class="fg"><label>Organisation Type *</label>
+                <select required>
+                  <option value="">Select type</option>
+                  <option>International NGO</option><option>Local NGO</option>
+                  <option>Government Agency</option><option>Private Foundation</option>
+                  <option>Corporate CSR</option><option>Individual Donor</option>
+                  <option>Religious Organisation</option><option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Contact Person *</label><input type="text" placeholder="Full name" required/></div>
+              <div class="fg"><label>Job Title</label><input type="text" placeholder="e.g. Programme Officer"/></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Email Address *</label><input type="email" placeholder="contact@org.com" required/></div>
+              <div class="fg"><label>Phone Number</label><input type="tel" placeholder="e.g. +256 701234567"/></div>
+            </div>
+            <div class="fg"><label>Partnership Interest</label>
+              <div class="checkbox-grid">
+                <label class="cb-item"><input type="checkbox"/>💰 Financial Donation</label>
+                <label class="cb-item"><input type="checkbox"/>🍽️ Food Donation</label>
+                <label class="cb-item"><input type="checkbox"/>🏫 School Feeding Fund</label>
+                <label class="cb-item"><input type="checkbox"/>👨‍🌾 Farmer Support</label>
+                <label class="cb-item"><input type="checkbox"/>🔬 Research Partnership</label>
+                <label class="cb-item"><input type="checkbox"/>📡 Technology Support</label>
+              </div>
+            </div>
+            <div class="fg"><label>Estimated Annual Budget</label>
+              <select>
+                <option>Under UGX 1M</option><option>UGX 1M – 10M</option>
+                <option>UGX 10M – 50M</option><option>UGX 50M – 200M</option>
+                <option>UGX 200M+</option><option>Prefer not to say</option>
+              </select>
+            </div>
+            <div class="fg"><label>Tell us about your goals</label>
+              <textarea placeholder="What outcomes are you hoping to achieve through this partnership?" rows="3"></textarea>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="fc-ngo" required/>
+              <label for="fc-ngo">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and consent to be contacted by the Farm 2 Plate partnerships team.</label>
+            </div>
+            <button type="submit" class="btn-submit btn-submit-orange">
+              <i class="fas fa-handshake"></i> Submit Partnership Enquiry
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- TRANSPORTER FORM -->
+      <div class="reg-panel" id="panel-transporter">
+        <div class="rp-grid">
+          <div class="rp-info">
+            <div class="rpi-icon">🚛</div>
+            <h3>Join the Logistics Network</h3>
+            <p>Connect with farmers who need reliable delivery — and let our AI send you optimised job alerts before sunrise every morning.</p>
+            <div class="rpi-benefits">
+              <div class="rpib"><i class="fas fa-check-circle"></i> 3–5 job alerts per day via SMS</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> AI-optimised routes — lower fuel cost</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Instant payment via mobile money</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> No registration fee</div>
+              <div class="rpib"><i class="fas fa-check-circle"></i> Work anywhere in Uganda</div>
+            </div>
+          </div>
+          <form class="rp-form" id="form-transporter" onsubmit="submitForm(event,'transporter')">
+            <div class="form-row">
+              <div class="fg"><label>Full Name *</label><input type="text" placeholder="Full name" required/></div>
+              <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="e.g. 0771234567" required/></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Vehicle Type *</label>
+                <select required>
+                  <option value="">Select vehicle</option>
+                  <option>Boda Boda (Motorcycle)</option><option>Pickup Truck</option>
+                  <option>Mini-truck (1–3 tonnes)</option><option>Large Truck (3+ tonnes)</option>
+                  <option>Refrigerated Vehicle</option><option>Bicycle</option>
+                </select>
+              </div>
+              <div class="fg"><label>Capacity (kg)</label>
+                <select>
+                  <option>Under 50kg</option><option>50–200kg</option>
+                  <option>200–500kg</option><option>500kg–1 tonne</option><option>1+ tonne</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Primary District *</label>
+                <select required>
+                  <option value="">Select district</option>
+                  <option>Kampala</option><option>Wakiso</option><option>Gulu</option><option>Mbale</option>
+                  <option>Mbarara</option><option>Jinja</option><option>Fort Portal</option><option>Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>Operating Hours</label>
+                <select>
+                  <option>Early morning (4am–10am)</option>
+                  <option>Daytime (8am–6pm)</option>
+                  <option>Flexible / anytime</option>
+                </select>
+              </div>
+            </div>
+            <div class="fg"><label>Mobile Money Number (for payments)</label>
+              <input type="tel" placeholder="MTN or Airtel number"/>
+            </div>
+            <div class="fg"><label>Driving Licence Number</label>
+              <input type="text" placeholder="For vehicle verification (optional for boda boda)"/>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="fc-transporter" required/>
+              <label for="fc-transporter">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and consent to receive delivery job alerts via SMS.</label>
+            </div>
+            <button type="submit" class="btn-submit btn-submit-teal">
+              <i class="fas fa-truck"></i> Register as Transporter — Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div><!-- end reg-panels -->
+  </div>
+</section>
+
+<!-- ===== DONATE SECTION ===== -->
+<section id="donate" class="dark-sec">
+  <div class="container">
+    <div class="sec-head left">
+      <span class="chip chip-y">💛 Donate</span>
+      <h2>Turn Your Money Into<br/>Meals on Plates</h2>
+      <p>100% of donations go directly into the food pool — matched in real time to verified farmers and families in need. Every shilling is tracked and reported.</p>
+    </div>
+    <div class="donate-layout">
+
+      <!-- Donation calculator -->
+      <div class="donation-calc">
+        <h4 class="dc-title">💰 Giving Calculator</h4>
+        <p class="dc-sub">Choose an amount and see exactly what your donation provides.</p>
+
+        <!-- Preset amounts -->
+        <div class="preset-amounts" id="preset-amounts">
+          <button class="pa-btn active" data-amount="10000" onclick="setAmount(10000,this)">UGX 10,000</button>
+          <button class="pa-btn" data-amount="25000" onclick="setAmount(25000,this)">UGX 25,000</button>
+          <button class="pa-btn" data-amount="50000" onclick="setAmount(50000,this)">UGX 50,000</button>
+          <button class="pa-btn" data-amount="100000" onclick="setAmount(100000,this)">UGX 100,000</button>
+          <button class="pa-btn" data-amount="500000" onclick="setAmount(500000,this)">UGX 500,000</button>
+          <button class="pa-btn" data-amount="1000000" onclick="setAmount(1000000,this)">UGX 1,000,000</button>
+        </div>
+
+        <!-- Custom amount -->
+        <div class="custom-amount-wrap">
+          <label>Or enter a custom amount (UGX):</label>
+          <div class="ca-input-wrap">
+            <span class="ca-prefix">UGX</span>
+            <input type="number" id="custom-amount" placeholder="e.g. 75000" min="1000" onkeyup="customAmount()"/>
+          </div>
+        </div>
+
+        <!-- Impact display -->
+        <div class="impact-display" id="impact-display">
+          <div class="id-header">✨ Your UGX <span id="id-amount">10,000</span> will provide:</div>
+          <div class="id-items" id="id-items">
+            <div class="id-item"><span>🥦</span><strong id="id-food">5 kg</strong><small>of fresh produce</small></div>
+            <div class="id-item"><span>👨‍👩‍👧</span><strong id="id-family">1 family</strong><small>fed for 3 days</small></div>
+            <div class="id-item"><span>👶</span><strong id="id-children">2 children</strong><small>receive school meals</small></div>
+            <div class="id-item"><span>📱</span><strong id="id-sms">12 SMS</strong><small>nutrition tips sent</small></div>
+          </div>
+        </div>
+
+        <!-- Frequency -->
+        <div class="donate-freq">
+          <button class="df-btn active" data-freq="once" onclick="setFreq('once',this)">One-time</button>
+          <button class="df-btn" data-freq="monthly" onclick="setFreq('monthly',this)">Monthly</button>
+          <button class="df-btn" data-freq="annual" onclick="setFreq('annual',this)">Annual</button>
+        </div>
+
+        <!-- Payment buttons -->
+        <div class="pay-methods">
+          <button class="pay-btn mtn-btn" onclick="processDonation('mtn')">
+            <span>📡</span> Pay with MTN MoMo
+          </button>
+          <button class="pay-btn airtel-btn" onclick="processDonation('airtel')">
+            <span>📶</span> Pay with Airtel Money
+          </button>
+          <button class="pay-btn card-btn" onclick="processDonation('card')">
+            <span>💳</span> Pay by Card
+          </button>
+        </div>
+        <p class="donate-note"><i class="fas fa-lock"></i> Secure · Transparent · Every shilling tracked &amp; reported</p>
+      </div>
+
+      <!-- Donation impact stories sidebar -->
+      <div class="donation-stories">
+        <h4>What Donations Achieve</h4>
+        <div class="ds-item">
+          <div class="dsi-icon">🍽️</div>
+          <div><strong>UGX 10,000</strong><p>Buys 5kg of fresh produce for a vulnerable family</p></div>
+        </div>
+        <div class="ds-item">
+          <div class="dsi-icon">👶</div>
+          <div><strong>UGX 50,000</strong><p>Provides a full week of school meals for 5 children</p></div>
+        </div>
+        <div class="ds-item">
+          <div class="dsi-icon">🌾</div>
+          <div><strong>UGX 100,000</strong><p>Buys seeds &amp; inputs for a smallholder farmer</p></div>
+        </div>
+        <div class="ds-item">
+          <div class="dsi-icon">🏫</div>
+          <div><strong>UGX 500,000</strong><p>Funds a full month of school feeding for 50 students</p></div>
+        </div>
+        <div class="ds-item">
+          <div class="dsi-icon">🏡</div>
+          <div><strong>UGX 1,000,000</strong><p>Connects an entire village cluster to the platform</p></div>
+        </div>
+        <div class="trust-badges-dark">
+          <span><i class="fas fa-lock"></i> SSL Secured</span>
+          <span><i class="fas fa-check-circle"></i> Verified NGO</span>
+          <span><i class="fas fa-eye"></i> 100% Transparent</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLUNTEER ===== -->
+<section id="volunteer">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">🙋 Volunteer</span>
+      <h2>Give Your Time &amp; Skills</h2>
+      <p class="sec-sub">We need field volunteers, digital champions, nutrition educators, translators, and community mobilisers across Uganda.</p>
+    </div>
+    <div class="volunteer-grid">
+      <div class="vol-card">
+        <div class="vc-icon">🌾</div>
+        <h3>Field Volunteer</h3>
+        <p>Help onboard farmers in your district, assist with produce listing, and support training sessions in rural communities.</p>
+        <div class="vc-tags"><span>Rural Areas</span><span>Farmer Training</span><span>2–4 hrs/week</span></div>
+        <button class="vc-btn" onclick="openVolForm('field')">Apply Now</button>
+      </div>
+      <div class="vol-card">
+        <div class="vc-icon">💻</div>
+        <h3>Digital Champion</h3>
+        <p>Help community members navigate the web platform, troubleshoot SMS issues, and spread digital literacy in your area.</p>
+        <div class="vc-tags"><span>Tech Skills</span><span>Community</span><span>Flexible Hours</span></div>
+        <button class="vc-btn" onclick="openVolForm('digital')">Apply Now</button>
+      </div>
+      <div class="vol-card">
+        <div class="vc-icon">🥗</div>
+        <h3>Nutrition Educator</h3>
+        <p>Conduct household nutrition sessions, support child feeding awareness campaigns, and assist our health team with community outreach.</p>
+        <div class="vc-tags"><span>Health Background</span><span>Community Outreach</span></div>
+        <button class="vc-btn" onclick="openVolForm('nutrition')">Apply Now</button>
+      </div>
+      <div class="vol-card">
+        <div class="vc-icon">🌍</div>
+        <h3>Language Translator</h3>
+        <p>Help translate SMS content, training materials, and platform guides into Luganda, Swahili, Acholi, Runyankore, or other Ugandan languages.</p>
+        <div class="vc-tags"><span>Remote</span><span>Flexible</span><span>Languages</span></div>
+        <button class="vc-btn" onclick="openVolForm('translator')">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPREAD THE WORD ===== -->
+<section id="spread" class="light-sec">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">📣 Spread the Word</span>
+      <h2>Share This Movement</h2>
+      <p class="sec-sub">Know a farmer, school, NGO or transporter who should be on the platform? Share Farm 2 Plate Connect with them today.</p>
+    </div>
+    <div class="share-layout">
+      <div class="share-stat-row">
+        <div class="ssr-item"><strong>18,845</strong><span>People already involved</span></div>
+        <div class="ssr-sep"></div>
+        <div class="ssr-item"><strong>2,340</strong><span>Referrals this month</span></div>
+        <div class="ssr-sep"></div>
+        <div class="ssr-item"><strong>10 districts</strong><span>Active coverage</span></div>
+      </div>
+      <div class="share-options">
+        <div class="so-card">
+          <div class="so-icon facebook"><i class="fab fa-facebook-f"></i></div>
+          <h4>Share on Facebook</h4>
+          <p>Post our story to your network and help us reach more farmers and donors.</p>
+          <a href="https://facebook.com/sharer/sharer.php?u=https://farm2plate.ug" target="_blank" class="so-btn fb-btn">Share on Facebook</a>
+        </div>
+        <div class="so-card">
+          <div class="so-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+          <h4>Share on WhatsApp</h4>
+          <p>Send this directly to farmers, school heads, and community leaders in your contacts.</p>
+          <a href="https://wa.me/?text=Join+Farm+2+Plate+Connect+%F0%9F%8C%BE+%E2%80%94+a+platform+connecting+Uganda%27s+farmers+to+families.+Register+free%3A+https%3A%2F%2Ffarm2plate.ug" target="_blank" class="so-btn wa-btn-share">Share on WhatsApp</a>
+        </div>
+        <div class="so-card">
+          <div class="so-icon twitter"><i class="fab fa-twitter"></i></div>
+          <h4>Share on Twitter / X</h4>
+          <p>Help spread the word about food security technology in Uganda.</p>
+          <a href="https://twitter.com/intent/tweet?text=Connecting+Uganda%27s+farmers+to+families+%F0%9F%8C%BE+Farm+2+Plate+Connect+is+ending+hunger+with+SMS+technology.+Join+free%3A+https%3A%2F%2Ffarm2plate.ug" target="_blank" class="so-btn tw-btn">Share on Twitter</a>
+        </div>
+        <div class="so-card">
+          <div class="so-icon copy-link"><i class="fas fa-link"></i></div>
+          <h4>Copy Referral Link</h4>
+          <p>Share your unique link — track how many people you bring to the platform.</p>
+          <button class="so-btn copy-btn" onclick="copyLink()"><i class="fas fa-copy"></i> Copy Link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head centered">
+      <span class="chip">❓ FAQ</span>
+      <h2>Common Questions</h2>
+      <p class="sec-sub">Everything you need to know before joining the platform.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-col">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            Is registration really free? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Yes — completely free for farmers, households, schools and transporters. There are no hidden fees. The platform is funded through small marketplace transaction fees and partner contributions.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            Do I need a smartphone or internet? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">No! Farm 2 Plate Connect is SMS-first. Everything works on a basic feature phone — just a phone and a SIM card (MTN or Airtel). The web platform is optional for those who have internet access.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            How quickly will I receive SMS advisories? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Farmers typically receive their first SMS advisory within 24 hours of registration. Daily advisories are delivered at 6:00 AM every morning, including weather, pest alerts, and market prices.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            How are donations used? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Donations go into the verified food pool. Our AI matching system allocates food to the most vulnerable households and schools in real time. 100% of donations are tracked and reported in our monthly impact dashboard — visible to all donors.</div>
+        </div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            How are farmers paid? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Farmers receive payment within 60 seconds of delivery confirmation via MTN Mobile Money or Airtel Money. No bank account needed. Payments are automated and cannot be withheld by the platform.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            Which districts are covered? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">We currently cover 10 districts: Kampala, Wakiso, Gulu, Mbale, Mbarara, Jinja, Fort Portal, Arua, Soroti, and Kabale. We are expanding to Lira, Masaka, Kasese, and Tororo in 2025. If your district is not listed, register anyway — you'll be notified when we expand to your area.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            Can I partner if I'm outside Uganda? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Absolutely. International donors, foundations, and NGOs are welcome. Donations can be made in UGX, USD, EUR or GBP via card or bank transfer. Contact us for international wire transfer details.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFAQ(this)">
+            Is my personal data safe? <i class="fas fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-a">Yes. We are GDPR-compliant and follow Uganda's Data Protection and Privacy Act. Your data is encrypted, never sold to third parties, and you can request deletion at any time. See our Privacy Policy for full details.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOLUNTEER MODAL ===== -->
+<div id="vol-modal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="m-close" onclick="closeVolModal()"><i class="fas fa-times"></i></button>
+    <div class="m-icon" id="vol-modal-icon">🙋</div>
+    <h2 id="vol-modal-title">Volunteer Application</h2>
+    <p id="vol-modal-sub">Tell us about yourself and we'll be in touch within 48 hours.</p>
+    <form onsubmit="submitVolunteer(event)">
+      <div class="form-row">
+        <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name" required/></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="e.g. 0771234567" required/></div>
+      </div>
+      <div class="fg"><label>Email Address *</label><input type="email" placeholder="you@example.com" required/></div>
+      <div class="fg"><label>District</label>
+        <select>
+          <option>Kampala</option><option>Wakiso</option><option>Gulu</option>
+          <option>Mbale</option><option>Mbarara</option><option>Other</option>
+        </select>
+      </div>
+      <div class="fg"><label>Why do you want to volunteer?</label>
+        <textarea placeholder="Tell us a bit about yourself and your motivation..." rows="3"></textarea>
+      </div>
+      <div class="fg"><label>How many hours per week can you commit?</label>
+        <select>
+          <option>1–2 hours</option><option>2–4 hours</option>
+          <option>4–8 hours</option><option>8+ hours (part-time)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit full-btn">Submit Application</button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="success-toast" class="success-toast hidden">
+  <i class="fas fa-check-circle"></i>
+  <div>
+    <strong id="toast-title">Registration Successful!</strong>
+    <p id="toast-msg">You'll receive an SMS confirmation shortly.</p>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner container">
+    <div class="ft-brand">
+      <div class="ft-logo-text"><span>🌾</span> Farm<em>2</em>Plate</div>
+      <p>Connecting farms to families. Ending hunger with technology in Uganda and beyond.</p>
+      <div class="ft-soc">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Platform</h4><a href="howitworks.html">How It Works</a><a href="impact.html">Impact Dashboard</a><a href="getinvolved.html">Register</a><a href="blog.html">News &amp; Blog</a></div>
+    <div class="ft-col"><h4>Organisation</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="index.html#partners">Partners</a><a href="getinvolved.html">Get Involved</a></div>
+    <div class="ft-col"><h4>Legal &amp; Contact</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="#">Data Policy</a></div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2025 Farm 2 Plate Connect. All rights reserved.</p>
+    <p><i class="fas fa-lock"></i> SSL Secured · Verified Organisation</p>
+  </div>
+</footer>
+
+<!-- AI ASSISTANT -->
+<div id="ai-widget">
+  <button id="ai-fab" onclick="toggleAI()">
+    <i class="fas fa-robot"></i>
+    <div class="ai-ring"></div>
+  </button>
+  <div id="ai-panel">
+    <div class="ap-head">
+      <span>🤖</span>
+      <div><strong>FarmBot AI</strong><small>● Online</small></div>
+      <button onclick="toggleAI()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="ap-msgs" id="ap-msgs">
+      <div class="ai-msg bot">👋 Ready to help you get involved! Ask me which role is right for you, or how donations work.</div>
+    </div>
+    <div class="ap-quick">
+      <button onclick="askAI('Which role is right for me?')">Which role fits me?</button>
+      <button onclick="askAI('How do donations work?')">How donations work?</button>
+      <button onclick="askAI('How do I register as a farmer?')">Register farmer?</button>
+    </div>
+    <div class="ap-input">
+      <button id="mic-btn" onclick="startVoice()"><i class="fas fa-microphone"></i></button>
+      <input type="text" id="ap-in" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter')sendAI()"/>
+      <button onclick="sendAI()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div id="voice-bar" class="v-bar hidden"><div class="v-dot"></div><span>Listening...</span></div>
+  </div>
+</div>
+
+<a href="https://wa.me/256700123456" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script src="getinvolved.js"></script>
+</body>
+</html>
